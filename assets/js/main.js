@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initConsultationModal();
   initForms();
   initSmoothScroll();
+  initMobileBottomNavBar();
 });
 
 /**
@@ -251,4 +252,47 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/**
+ * 7. Luxury Glassmorphic Bottom Navigation Bar for Mobile
+ */
+function initMobileBottomNavBar() {
+  if (document.getElementById('mobile-bottom-navbar')) return;
+
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+  const navItems = [
+    { name: 'Home', href: 'index.html', icon: 'home' },
+    { name: 'Services', href: 'services.html', icon: 'architecture' },
+    { name: 'Process', href: 'process.html', icon: 'timeline' },
+    { name: 'About', href: 'about.html', icon: 'corporate_fare' },
+    { name: 'Contact', href: 'contact.html', icon: 'mail' }
+  ];
+
+  const navEl = document.createElement('nav');
+  navEl.id = 'mobile-bottom-navbar';
+  navEl.className = 'fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#131313]/95 backdrop-blur-2xl border-t border-primary/30 shadow-[0_-12px_40px_rgba(0,0,0,0.95)] px-2 py-1.5 flex justify-around items-center';
+
+  navItems.forEach(item => {
+    const isActive = (item.href === currentPath) || (currentPath === '' && item.href === 'index.html');
+
+    const link = document.createElement('a');
+    link.href = item.href;
+    link.className = `flex flex-col items-center justify-center gap-0.5 py-1 px-2.5 rounded-lg transition-all ${
+      isActive
+        ? 'text-primary scale-105 font-bold'
+        : 'text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100'
+    }`;
+
+    link.innerHTML = `
+      <div class="w-6 h-0.5 rounded-full ${isActive ? 'bg-gradient-to-r from-[#f2ca50] to-[#d4af37] shadow-[0_0_10px_#f2ca50]' : 'bg-transparent'} mb-0.5 transition-all"></div>
+      <span class="material-symbols-outlined text-2xl">${item.icon}</span>
+      <span class="text-[10px] tracking-wider uppercase font-mono">${item.name}</span>
+    `;
+
+    navEl.appendChild(link);
+  });
+
+  document.body.appendChild(navEl);
 }
