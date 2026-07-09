@@ -146,8 +146,8 @@ function initConsultationModal() {
               </select>
             </div>
 
-            <button type="submit" class="w-full btn-primary-metallic py-3 rounded text-sm font-bold tracking-widest mt-2">
-              Request Confidential Briefing
+            <button type="submit" class="w-full btn-primary-metallic px-4 py-3.5 rounded text-xs sm:text-sm font-bold tracking-wider leading-snug mt-2 text-center whitespace-normal">
+              <span>Request Confidential Briefing</span>
             </button>
           </form>
         </div>
