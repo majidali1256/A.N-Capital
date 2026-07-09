@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About A.N Capital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#353534",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "tertiary": "#cfcece",
+                      "on-secondary": "#3d2f00",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-container": "#554300",
+                      "on-primary-fixed": "#241a00",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-secondary-fixed-variant": "#584400",
+                      "inverse-primary": "#735c00",
+                      "surface-tint": "#e9c349",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a3939",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline-variant": "#4d4635",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary": "#2f3131",
+                      "surface": "#131313",
+                      "outline": "#99907c",
+                      "on-primary": "#3c2f00",
+                      "surface-container": "#201f1f",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-background": "#e5e2e1",
+                      "tertiary-container": "#b3b3b3",
+                      "tertiary-fixed": "#e3e2e2",
+                      "primary-container": "#d4af37",
+                      "background": "#131313",
+                      "on-secondary-container": "#f3d273",
+                      "surface-dim": "#131313",
+                      "primary-fixed": "#ffe088",
+                      "on-surface": "#e5e2e1",
+                      "on-tertiary-container": "#444546",
+                      "error": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#241a00",
+                      "primary": "#f2ca50",
+                      "surface-container-highest": "#353534",
+                      "secondary-fixed-dim": "#e4c367",
+                      "surface-container-low": "#1c1b1b",
+                      "secondary-fixed": "#ffe08b",
+                      "secondary-container": "#715900",
+                      "surface-container-high": "#2a2a2a",
+                      "secondary": "#e4c367",
+                      "on-surface-variant": "#d0c5af"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "section-gap": "80px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Manrope"
+                      ],
+                      "label-caps": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Libre Caslon Text"
+                      ],
+                      "headline-lg-mobile": [
+                              "Libre Caslon Text"
+                      ],
+                      "display-lg": [
+                              "Libre Caslon Text"
+                      ],
+                      "body-sm": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #f3d273 50%, #d4af37 100%);
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        .premium-card {
+            background-color: #111111;
+            border: 1px solid rgba(192, 192, 192, 0.1);
+            transition: all 0.3s ease;
+        }
+        .premium-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-primary/20 shadow-md">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="block h-12 w-auto" href="#"><div class="flex flex-col items-start"><div class="w-auto h-12"><img alt="A.N Capital Monogram" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLu2IPRv4PnmP4FCB0OBPwxIGbRa1TTdTF8a48H8b46n8a7XC-lLWjlRlY_DhkxP1juooTB_haIE58GYS0L6o34f57p0ATJV9WQJyM35J1TfxuhuqgaUDTTtRD85yFw1R0BaUBxq3peWAseLvRe7MqA7ODjDyuUvKXqDmkbwZuo_PrRSvGSEg_HW44_QW10c1bvn-ZL0KPLI2veym36A6I16vliH_MY61u4UUPJy_uvTMkNx-XtIkkwrGOQ"/></div></div></a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 px-3 py-2 rounded" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 scale-95 transition-transform px-3 py-2" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 px-3 py-2 rounded" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 px-3 py-2 rounded" href="#">Process</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 px-3 py-2 rounded" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 px-3 py-2 rounded" href="#">Contact</a>
+</div>
+<button class="hidden md:block gold-gradient-bg text-on-primary font-bold px-6 py-3 rounded text-label-caps uppercase tracking-wider hover:opacity-90 transition-opacity">
+                Get Consultation
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 pb-20">
+<div class="absolute inset-0 w-full h-full z-0 opacity-40 mix-blend-screen pointer-events-none">
+<!-- STITCH_THREEJS_START:ANIMATION_53 class="w-full h-full block" -->
+<div class="w-full h-full block" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_53" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_53');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+camera.position.set(0, 2, 10);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0xd4af37, 2); // Gold light
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+const blueLight = new THREE.PointLight(0x3a3939, 1);
+blueLight.position.set(-5, 2, 2);
+scene.add(blueLight);
+
+// Creating a "Big Building" - Abstract Architectural Form
+const buildingGroup = new THREE.Group();
+
+const createTower = (w, h, d, x, z, color) => {
+    const geometry = new THREE.BoxGeometry(w, h, d);
+    const material = new THREE.MeshPhongMaterial({ 
+        color: color, 
+        transparent: true, 
+        opacity: 0.8,
+        shininess: 100
+    });
+    const tower = new THREE.Mesh(geometry, material);
+    tower.position.set(x, h/2, z);
+    
+    // Wireframe for "tech" look
+    const wireframeGeom = new THREE.EdgesGeometry(geometry);
+    const wireframeMat = new THREE.LineBasicMaterial({ color: 0xd4af37, transparent: true, opacity: 0.3 });
+    const wireframe = new THREE.LineSegments(wireframeGeom, wireframeMat);
+    tower.add(wireframe);
+    
+    return tower;
+};
+
+// Central Skyscrapers
+buildingGroup.add(createTower(2, 8, 2, 0, 0, 0x1c1b1b));
+buildingGroup.add(createTower(1.5, 6, 1.5, -2.5, -1, 0x1c1b1b));
+buildingGroup.add(createTower(1.5, 5, 1.5, 2.5, -1, 0x1c1b1b));
+
+// Floating "Trading Candles" / Financial Bars
+const financeGroup = new THREE.Group();
+for (let i = 0; i < 12; i++) {
+    const h = 1 + Math.random() * 3;
+    const geom = new THREE.BoxGeometry(0.3, h, 0.3);
+    const mat = new THREE.MeshPhongMaterial({ 
+        color: Math.random() > 0.5 ? 0xd4af37 : 0xffffff,
+        emissive: Math.random() > 0.5 ? 0xd4af37 : 0x000000,
+        emissiveIntensity: 0.2
+    });
+    const bar = new THREE.Mesh(geom, mat);
+    const angle = (i / 12) * Math.PI * 2;
+    const radius = 6;
+    bar.position.set(Math.cos(angle) * radius, h/2 - 1, Math.sin(angle) * radius);
+    financeGroup.add(bar);
+}
+
+scene.add(buildingGroup);
+scene.add(financeGroup);
+
+// Animation
+const clock = new THREE.Clock();
+
+function animate() {
+    requestAnimationFrame(animate);
+    const elapsedTime = clock.getElapsedTime();
+
+    buildingGroup.rotation.y = elapsedTime * 0.1;
+    financeGroup.rotation.y = -elapsedTime * 0.15;
+
+    // Gentle floating for buildings
+    buildingGroup.position.y = Math.sin(elapsedTime * 0.5) * 0.2;
+
+    renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_53 -->
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto">
+<h1 class="text-display-lg font-display-lg text-on-surface mb-6 font-bold tracking-tight">About A.N Capital</h1>
+<p class="text-title-md font-title-md text-on-surface-variant mb-10 leading-relaxed font-light">
+                Your Trust, Our Commitment. We are dedicated to pioneering growth and securing legacies through strategic financial expertise and unwavering transparency.
+            </p>
+<div class="flex gap-4 justify-center">
+<button class="gold-gradient-bg text-on-primary font-bold px-8 py-4 rounded text-label-caps uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Discover Our Vision
+                </button>
+</div>
+</div>
+<!-- Subtle bottom gradient -->
+<div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-0"></div>
+</section>
+<!-- Main Intro Split Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative rounded-xl overflow-hidden shadow-2xl h-[500px]">
+<img class="w-full h-full object-cover rounded-xl border border-primary/20" data-alt="A high-end, luxurious corporate boardroom in a modern skyscraper with panoramic city views. Sleek dark mahogany table, plush leather chairs, subtle gold accents, and bright, professional lighting reflecting off glass walls. The mood is authoritative and successful, suitable for a private banking or luxury finance firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF2JuH8jEjE9n_JU6XGP164mXgGXBbK027gMbK2ipH1zQZPpU14Sxu59uILiiJsqsb8Abm0eBx-HzTX5_mOlXbb-Ak4DmHxFBtrc-oKw0FXw4wCEkGu-MVyL46K0ZjYioeC9BUz9n0JR6g7swCMcGAVYYoYJJNqPkk0yTziHJiGK7-zsdOSZ12jHQ2qNqTjdfuObtVAA7RAB-wRPQ9epQTswvmmBj40qxCloAqIzoFI5f1Ss3xXmQTmw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="text-primary font-label-caps uppercase tracking-widest mb-2">Established Excellence</p>
+<p class="text-body-lg text-on-surface">Decades of combined experience in wealth management and strategic investments.</p>
+</div>
+</div>
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-8 border-l-4 border-primary pl-6 py-2">
+                    Redefining Wealth<br/>Management
+                </h2>
+<div class="space-y-6 text-body-lg font-body-lg text-on-surface-variant">
+<p class="">
+                        A.N Capital was founded on a singular premise: that true wealth generation requires more than just capital—it demands profound trust, absolute transparency, and a relentless commitment to our clients' financial futures.
+                    </p>
+<p class="">
+                        We cater exclusively to high-net-worth individuals and institutional investors, offering bespoke strategies that navigate complex markets with precision. Our approach marries traditional financial prudence with innovative, forward-looking insights.
+                    </p>
+<p class="">
+                        By aligning our success directly with yours, we forge enduring partnerships that span generations, ensuring your legacy is not only preserved but actively propelled forward.
+                    </p>
+</div>
+<div class="mt-10 grid grid-cols-2 gap-8 border-t border-primary/10 pt-8">
+<div>
+<p class="text-display-lg font-display-lg text-primary mb-1">10+</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Years of Excellence</p>
+</div>
+<div>
+<p class="text-display-lg font-display-lg text-primary mb-1">$5B+</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Assets Managed</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="bg-surface-container py-section-gap border-y border-primary/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="premium-card p-10 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">explore</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-primary mb-6">Our Mission</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed relative z-10">
+                    To deliver unparalleled financial advisory and investment solutions by prioritizing structural integrity, rigorous analysis, and a steadfast dedication to client prosperity. We aim to be the definitive architecture behind your financial success.
+                </p>
+</div>
+<div class="premium-card p-10 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-primary mb-6">Our Vision</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed relative z-10">
+                    To be the globally recognized vanguard of elite wealth management, where every client relationship is a testament to enduring trust, and every investment decision is a step toward profound, sustainable growth.
+                </p>
+</div>
+</div>
+</section>
+<!-- Core Values -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-4">Core Values</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">The principles that govern our decisions and define our culture.</p>
+<div class="w-16 h-1 bg-primary mx-auto mt-6 rounded"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Value 1 -->
+<div class="premium-card p-6 rounded-lg text-center group cursor-default">
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-variant border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary group-hover:gold-border-glow transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<h4 class="text-title-md font-title-md text-on-surface mb-3">Trust</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">The foundation of every enduring relationship and successful portfolio.</p>
+</div>
+<!-- Value 2 -->
+<div class="premium-card p-6 rounded-lg text-center group cursor-default">
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-variant border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary group-hover:gold-border-glow transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<h4 class="text-title-md font-title-md text-on-surface mb-3">Growth</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Relentless pursuit of advancement and sustainable yield generation.</p>
+</div>
+<!-- Value 3 -->
+<div class="premium-card p-6 rounded-lg text-center group cursor-default">
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-variant border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary group-hover:gold-border-glow transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h4 class="text-title-md font-title-md text-on-surface mb-3">Professionalism</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Exacting standards, profound expertise, and meticulous execution.</p>
+</div>
+<!-- Value 4 -->
+<div class="premium-card p-6 rounded-lg text-center group cursor-default">
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-variant border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary group-hover:gold-border-glow transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<h4 class="text-title-md font-title-md text-on-surface mb-3">Transparency</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Clear, candid communication illuminating every financial maneuver.</p>
+</div>
+<!-- Value 5 -->
+<div class="premium-card p-6 rounded-lg text-center group cursor-default">
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-variant border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary group-hover:gold-border-glow transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h4 class="text-title-md font-title-md text-on-surface mb-3">Commitment</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Unwavering dedication to safeguarding and growing your legacy.</p>
+</div>
+</div>
+</section>
+<!-- Why Choose Us Grid -->
+<section class="bg-surface-container py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-primary/10 pb-8">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-4">The A.N Capital Advantage</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">Distinctive methodologies tailored for exceptional outcomes.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="premium-card p-8 rounded-xl group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<h4 class="text-title-md font-title-md text-on-surface mb-4">Institutional Expertise</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Access strategies and insights typically reserved for institutional funds, adapted for private wealth.</p>
+</div>
+<!-- Card 2 -->
+<div class="premium-card p-8 rounded-xl group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<h4 class="text-title-md font-title-md text-on-surface mb-4">Dynamic Allocation</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Agile portfolio structuring that anticipates market shifts rather than reacting to them.</p>
+</div>
+<!-- Card 3 -->
+<div class="premium-card p-8 rounded-xl group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">shield_locked</span>
+<h4 class="text-title-md font-title-md text-on-surface mb-4">Risk Mitigation</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Proprietary risk assessment frameworks designed to protect capital during volatile cycles.</p>
+</div>
+<!-- Card 4 -->
+<div class="premium-card p-8 rounded-xl group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">public</span>
+<h4 class="text-title-md font-title-md text-on-surface mb-4">Global Reach</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Unrestricted access to international markets and exclusive cross-border opportunities.</p>
+</div>
+<!-- Card 5 -->
+<div class="premium-card p-8 rounded-xl group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<h4 class="text-title-md font-title-md text-on-surface mb-4">Concierge Service</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Dedicated advisory teams providing white-glove service and round-the-clock support.</p>
+</div>
+<!-- Card 6 -->
+<div class="premium-card p-8 rounded-xl group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">insights</span>
+<h4 class="text-title-md font-title-md text-on-surface mb-4">Proprietary Research</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">In-house analytics delivering unfiltered, high-conviction intelligence to inform every move.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-8 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-primary/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="col-span-1 md:col-span-2">
+<div class="mb-6"><div class="h-16 w-auto mb-2"><img alt="A.N Capital Monogram" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLu2IPRv4PnmP4FCB0OBPwxIGbRa1TTdTF8a48H8b46n8a7XC-lLWjlRlY_DhkxP1juooTB_haIE58GYS0L6o34f57p0ATJV9WQJyM35J1TfxuhuqgaUDTTtRD85yFw1R0BaUBxq3peWAseLvRe7MqA7ODjDyuUvKXqDmkbwZuo_PrRSvGSEg_HW44_QW10c1bvn-ZL0KPLI2veym36A6I16vliH_MY61u4UUPJy_uvTMkNx-XtIkkwrGOQ"/></div></div>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-md mb-6">
+                    Pioneering wealth strategies for the discerning investor. Our commitment is your financial security and robust growth.
+                </p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-label-caps font-label-caps text-on-surface uppercase tracking-widest mb-6 border-b border-primary/20 pb-2 inline-block">Legal</h5>
+<ul class="space-y-4">
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Investment Disclaimer</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-label-caps font-label-caps text-on-surface uppercase tracking-widest mb-6 border-b border-primary/20 pb-2 inline-block">Contact</h5>
+<ul class="space-y-4 text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">call</span> +92 314 9364821</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">call</span> +92 322 4064491</li>
+<li class="flex items-start gap-2 mt-4"><span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span> Bahria Phase 7,<br/>Rawalpindi</li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-primary/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                © 2024 A.N Capital. Your Trust, Our Commitment.
+            </p>
+<p class="text-label-caps font-label-caps text-on-surface-variant tracking-widest">
+                INVEST | TRADE | GROW
+            </p>
+</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r128/three.min.js"></script>
+</body></html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>A.N Capital - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Three.js for 3D animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary": "#cfcece",
+                "primary-container": "#d4af37",
+                "on-primary-container": "#554300",
+                "surface-tint": "#e9c349",
+                "on-surface": "#e5e2e1",
+                "on-primary": "#3c2f00",
+                "surface": "#131313",
+                "surface-variant": "#353534",
+                "primary-fixed": "#ffe088",
+                "on-tertiary": "#2f3131",
+                "error-container": "#93000a",
+                "on-secondary-fixed": "#241a00",
+                "on-primary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#c6c6c6",
+                "inverse-surface": "#e5e2e1",
+                "secondary-fixed": "#ffe08b",
+                "on-tertiary-fixed-variant": "#464747",
+                "outline-variant": "#4d4635",
+                "on-secondary": "#3d2f00",
+                "surface-container-highest": "#353534",
+                "surface-container": "#201f1f",
+                "on-error": "#690005",
+                "surface-bright": "#3a3939",
+                "on-secondary-container": "#f3d273",
+                "surface-dim": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#584400",
+                "secondary-fixed-dim": "#e4c367",
+                "on-tertiary-fixed": "#1a1c1c",
+                "tertiary-fixed": "#e3e2e2",
+                "on-tertiary-container": "#444546",
+                "inverse-on-surface": "#313030",
+                "surface-container-low": "#1c1b1b",
+                "on-primary-fixed": "#241a00",
+                "outline": "#99907c",
+                "on-error-container": "#ffdad6",
+                "primary": "#f2ca50",
+                "on-background": "#e5e2e1",
+                "on-surface-variant": "#d0c5af",
+                "secondary-container": "#715900",
+                "tertiary-container": "#b3b3b3",
+                "surface-container-lowest": "#0e0e0e",
+                "inverse-primary": "#735c00",
+                "error": "#ffb4ab",
+                "primary-fixed-dim": "#e9c349",
+                "secondary": "#e4c367"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "64px",
+                "container-max": "1280px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "section-gap": "80px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "title-md": [
+                        "Manrope"
+                ],
+                "body-sm": [
+                        "Manrope"
+                ],
+                "label-caps": [
+                        "Manrope"
+                ],
+                "headline-lg-mobile": [
+                        "Libre Caslon Text"
+                ],
+                "display-lg": [
+                        "Libre Caslon Text"
+                ],
+                "body-lg": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Libre Caslon Text"
+                ]
+        },
+        "fontSize": {
+                "title-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ]
+        },
+        "animation": {
+            "fade-in-up": "fadeInUp 1s ease-out forwards",
+        },
+        "keyframes": {
+            "fadeInUp": {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+            }
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: transparent;
+            color: #e5e2e1;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* The webgl bg is handled via utility classes now, removing old #webgl-bg styles */
+
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e596 50%, #d4af37 100%);
+        }
+        
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e596 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary {
+            @apply gold-gradient text-on-primary font-bold rounded px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)];
+        }
+
+        .btn-secondary {
+            @apply border border-primary text-primary px-6 py-3 rounded font-bold transition-all duration-300 hover:bg-primary/10;
+        }
+
+        .service-card {
+            @apply bg-surface-container-low/80 backdrop-blur-sm border border-[#c0c0c0]/10 p-8 rounded-lg transition-all duration-500 hover:border-primary hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:-translate-y-2;
+        }
+
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards ease-out;
+        }
+
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="antialiased font-body-lg text-on-surface bg-surface-dim">
+<!-- WebGL Background Canvas -->
+<canvas class="fixed inset-0 -z-10 w-full h-full" id="webgl-bg" width="1280" height="3129"></canvas>
+<!-- Content wrapper to ensure z-index over background -->
+<div class="content-layer">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface-container-lowest/80 dark:bg-surface-container-lowest/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-primary/20 shadow-md transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<!-- Brand Logo -->
+<div class="flex items-center gap-2"><img alt="A.N Capital Logo" class="h-10 w-10 object-contain object-left" src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo"></div>
+<!-- Navigation Links (Hidden on Mobile) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps uppercase hover:bg-primary/10 transition-all duration-300" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase hover:bg-primary/10 transition-all duration-300" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase hover:bg-primary/10 transition-all duration-300" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase hover:bg-primary/10 transition-all duration-300" href="#">Process</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase hover:bg-primary/10 transition-all duration-300" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase hover:bg-primary/10 transition-all duration-300" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<a class="btn-primary font-label-caps text-label-caps uppercase bg-primary text-on-primary" href="#">Get Consultation</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[90vh] flex items-center pt-section-gap pb-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<!-- Left Content -->
+<div class="md:col-span-6 flex flex-col justify-center">
+<div class="animate-fade-in-up" style="animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards;">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-12 h-1 bg-primary"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest text-shadow-sm">Invest | Trade | Grow</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-[72px] mb-6 text-shadow-sm text-primary">
+                        Invest Smarter.<br>
+<span class="gold-text-gradient">Trade Better.</span><br>
+                        Grow Faster.
+                    </h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg animate-fade-in-up text-shadow-sm" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
+                    A.N Capital provides exclusive financial solutions for high-net-worth individuals and institutional investors, grounded in unparalleled expertise and unwavering commitment to your success.
+                </p>
+<div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards;">
+<a class="btn-primary shadow-lg bg-primary text-on-primary" href="#">Get Free Consultation</a>
+<a class="btn-secondary bg-surface-container-lowest/50 backdrop-blur-sm" href="#services">Explore Services</a>
+</div>
+<div class="mt-12 flex items-center gap-4 animate-fade-in-up" style="animation-delay: 0.7s; opacity: 0; animation-fill-mode: forwards;">
+<div class="flex -space-x-4">
+<img class="w-12 h-12 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="A macro shot of a sleek, dark metallic surface with subtle gold accents, representing luxury finance and precision. Soft, high-contrast lighting creates a premium, private banking aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGlLwHRkMCZNKraOFX1V6fCja5pjcYfTuKn8K7kAfgnYPf_smSidY_jNjV-8K35DgaqoM-Mj-_aIJkem0a44rt7fYtqwdAEcAOQJYSRjIeOqTwdIanS2sPsltT7dpNgx7jkC42AA_5r35Yw_KZtWRLGuSDziKWTJrv4v7Pu_NiHLmhXmYW5q3F9iBmXZ2y2Mln7FbEcLlROzl92Um-6G2jhCi0Nw9cd4GEKV4S7fERvhjpg-eYFZpxnQ">
+<img class="w-12 h-12 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Abstract visualization of a glowing upward trend line in gold against a deep charcoal background, conveying wealth creation and financial growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTb17MPFqk9F-J9k6Ycb2oi62aquQvCvd34g2UGAoN6_LuYEkhdluUwLwnENX_dWNMFSKlkIq45xlQr-8S15A7NQsy1J6ZqVXiIowrc3hKo19yUoj5XjaYHjtSC4tZUIcK_aDXSapXQYx-YGfIzCKEcvBfUOPbtvsvADyshAn6VnftE7C8goXjwO7rxmHZs5gQHYXwCWg4ekH7EIaRi2O8V54nlxrYUYDrqjgzSPFHGvLaFfNvgNSDXw">
+<div class="w-12 h-12 rounded-full border-2 border-surface-container-lowest bg-surface-container-high flex items-center justify-center text-primary font-bold text-sm">+5k</div>
+</div>
+<div class="text-sm text-on-surface-variant text-shadow-sm font-semibold">Trusted by institutional<br>investors worldwide</div>
+</div>
+</div>
+<!-- Right Visuals - 3D Container -->
+<div class="md:col-span-6 relative mt-12 md:mt-0 animate-fade-in-up flex items-center justify-center" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-full h-[500px] bg-transparent" id="threejs-hero-container"><canvas width="1128" height="1000" style="display: block; width: 564px; height: 500px;"></canvas></div>
+</div>
+</div>
+</header>
+<!-- Trust Line Section -->
+<section class="py-8 bg-surface-container-lowest/80 backdrop-blur-md border-y border-primary/10 relative z-10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-wide text-shadow-sm">
+                "Your Trust, Our Commitment."
+            </h2>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap relative z-10" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-8 animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest block mb-4 text-shadow-sm">What We Do</span>
+<h2 class="font-display-lg text-display-lg text-shadow-sm text-primary">Comprehensive Financial Solutions</h2>
+</div>
+<!-- Services 3D Container -->
+<div class="w-full h-[300px] bg-transparent relative z-10 mb-8 animate-fade-in-up" id="threejs-services-container" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;"><canvas width="2304" height="600" style="display: block; width: 1152px; height: 300px;"></canvas></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Service 1 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="domain">domain</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Real Estate Investments</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 font-semibold">Strategic acquisition and management of prime commercial and residential properties globally.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                        Discover More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="currency_exchange">currency_exchange</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Forex Trading</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 font-semibold">Advanced algorithmic and discretionary trading strategies in major currency markets.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                        Discover More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="directions_boat">directions_boat</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Physical Trading</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 font-semibold">Direct access to physical commodities markets ensuring tangible asset diversification.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                        Discover More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Service 4 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bar_chart">bar_chart</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Wealth Creation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 font-semibold">Bespoke portfolio management designed for long-term capital appreciation and preservation.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                        Discover More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- The A.N Capital Advantage Section -->
+<section class="py-section-gap relative z-10 bg-surface-container-lowest/50 backdrop-blur-md border-y border-primary/10" id="advantage">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12 animate-fade-in-up" style="animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards;">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest block mb-4 text-shadow-sm">Why Choose Us</span>
+<h2 class="font-display-lg text-display-lg text-shadow-sm text-primary">The A.N Capital Advantage</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Advantage 1 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_balance">account_balance</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Institutional Expertise</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-semibold">Access strategies and insights typically reserved for institutional funds, adapted for private wealth.</p>
+</div>
+<!-- Advantage 2 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="moving">moving</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Dynamic Allocation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-semibold">Agile portfolio structuring that anticipates market shifts rather than reacting to them.</p>
+</div>
+<!-- Advantage 3 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shield">shield</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Risk Mitigation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-semibold">Proprietary risk assessment frameworks designed to protect capital during volatile cycles.</p>
+</div>
+<!-- Advantage 4 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="public">public</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Global Reach</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-semibold">Unrestricted access to international markets and exclusive cross-border opportunities.</p>
+</div>
+<!-- Advantage 5 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="support_agent">support_agent</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Concierge Service</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-semibold">Dedicated advisory teams providing white-glove service and round-the-clock support.</p>
+</div>
+<!-- Advantage 6 -->
+<div class="service-card group animate-fade-in-up" style="animation-delay: 0.7s; opacity: 0; animation-fill-mode: forwards;">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high/80 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="query_stats">query_stats</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Proprietary Research</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-semibold">In-house analytics delivering unfiltered, high-conviction intelligence to inform every move.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="backdrop-blur-xl w-full pt-section-gap pb-8 border-t border-primary/10 relative z-10 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12 animate-fade-in-up" style="animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards;">
+<!-- Brand Info -->
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-4"><img alt="A.N Capital Logo" class="h-12 w-12 object-contain object-left" src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-6">
+                    Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="col-span-1">
+<h4 class="font-title-md text-title-md text-on-surface mb-4">Company</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Our Services</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-span-1">
+<h4 class="font-title-md text-title-md text-on-surface mb-4">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="location_on">location_on</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bahria Phase 7, Rawalpindi</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="phone">phone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+92 314 9364821</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="phone">phone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+92 322 4064491</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12 border-t border-primary/10 pt-12 animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+<h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-8">Site Index</h4>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Investment Process</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-primary/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in-up" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">
+                © 2024 A.N Capital. Your Trust, Our Commitment.
+            </p>
+<div class="flex flex-wrap gap-4 justify-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Investment Disclaimer</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</div> <!-- End content-layer -->
+<script>
+    // 1. Background WebGL Shader
+    const canvas = document.getElementById('webgl-bg');
+    const gl = canvas.getContext('webgl');
+
+    if (gl) {
+        // Vertex Shader
+        const vsSource = `
+            attribute vec4 a_position;
+            varying vec2 v_texCoord;
+            void main() {
+                gl_Position = a_position;
+                v_texCoord = a_position.xy;
+            }
+        `;
+
+        // Fragment Shader
+        const fsSource = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Create a slow, flowing liquid motion
+    float noise = sin(uv.x * 3.0 + u_time * 0.2) * cos(uv.y * 3.0 - u_time * 0.3);
+    noise += sin(uv.x * 5.0 - u_time * 0.4) * cos(uv.y * 2.0 + u_time * 0.2) * 0.5;
+    
+    // Base dark surface color (Luxury Black)
+    vec3 color = vec3(0.05, 0.05, 0.05);
+    
+    // Add subtle gold highlights (#d4af37)
+    vec3 gold = vec3(0.83, 0.69, 0.22);
+    float highlight = smoothstep(0.4, 0.9, noise * 0.5 + 0.5);
+    color = mix(color, gold * 0.15, highlight);
+    
+    // Mouse interaction glow
+    float dist = distance(uv, mouse);
+    float glow = smoothstep(0.3, 0.0, dist);
+    color += gold * glow * 0.05;
+    
+    // Edge vignette
+    float vignette = smoothstep(0.8, 0.3, length(uv - 0.5));
+    color *= vignette;
+    
+    gl_FragColor = vec4(color, 1.0);
+}
+        `;
+
+        function createShader(gl, type, source) {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            return shader;
+        }
+
+        const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+        const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+        const program = gl.createProgram();
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+        gl.useProgram(program);
+
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        const positions = [
+            -1.0, -1.0,
+             1.0, -1.0,
+            -1.0,  1.0,
+             1.0, -1.0,
+             1.0,  1.0,
+            -1.0,  1.0,
+        ];
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+        const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
+        gl.enableVertexAttribArray(positionAttributeLocation);
+        gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+        const timeLocation = gl.getUniformLocation(program, "u_time");
+        const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+        const mouseLocation = gl.getUniformLocation(program, "u_mouse");
+
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function resizeCanvasToDisplaySize(canvas) {
+            const displayWidth  = canvas.clientWidth;
+            const displayHeight = canvas.clientHeight;
+            if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+                canvas.width  = displayWidth;
+                canvas.height = displayHeight;
+            }
+        }
+
+        function render(time) {
+            time *= 0.001;
+            resizeCanvasToDisplaySize(gl.canvas);
+            gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+            
+            gl.uniform1f(timeLocation, time);
+            gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
+            gl.uniform2f(mouseLocation, mouseX, gl.canvas.height - mouseY);
+            
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+            requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+    }
+
+    // 2. 3D Object Functions
+
+    // Hero 3D Scene
+    function initHero3D() {
+        const container = document.getElementById('threejs-hero-container');
+        if (!container || typeof THREE === 'undefined') return;
+
+        const width = container.clientWidth || window.innerWidth;
+        const height = container.clientHeight || window.innerHeight;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xd4af37, 2, 50);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // Create a Stylized Architectural "A" Monogram / Building Silhouette
+        const group = new THREE.Group();
+
+        // Main structural pillars
+        const material = new THREE.MeshPhongMaterial({ color: 0xd4af37, shininess: 100, specular: 0xffffff });
+        const pillarGeo = new THREE.BoxGeometry(0.5, 3, 0.5);
+
+        const leftPillar = new THREE.Mesh(pillarGeo, material);
+        leftPillar.position.set(-1, 0, 0);
+        leftPillar.rotation.z = 0.2;
+        group.add(leftPillar);
+
+        const rightPillar = new THREE.Mesh(pillarGeo, material);
+        rightPillar.position.set(1, 0, 0);
+        rightPillar.rotation.z = -0.2;
+        group.add(rightPillar);
+
+        // Connecting cross-beams (modern skyscraper style)
+        const beamGeo = new THREE.BoxGeometry(2, 0.2, 0.2);
+        for (let i = 0; i < 5; i++) {
+            const beam = new THREE.Mesh(beamGeo, material);
+            beam.position.y = -1 + (i * 0.6);
+            beam.scale.x = 1 - (i * 0.15);
+            group.add(beam);
+        }
+
+        scene.add(group);
+        camera.position.z = 5;
+
+        // Floating Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            group.rotation.y += 0.005;
+            group.position.y = Math.sin(Date.now() * 0.001) * 0.2;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            const w = container.clientWidth || window.innerWidth;
+            const h = container.clientHeight || window.innerHeight;
+            renderer.setSize(w, h);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+        });
+    }
+
+    // Services 3D Scene
+    function createServices3DScene(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container || typeof THREE === 'undefined') return;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      container.appendChild(renderer.domElement);
+
+      const group = new THREE.Group();
+      scene.add(group);
+
+      // Materials
+      const goldMat = new THREE.MeshStandardMaterial({ 
+        color: 0xd4af37, 
+        metalness: 0.8, 
+        roughness: 0.2,
+        emissive: 0xd4af37,
+        emissiveIntensity: 0.1
+      });
+      const glassMat = new THREE.MeshPhysicalMaterial({ 
+        color: 0x3a3939, 
+        metalness: 0.9, 
+        roughness: 0.05, 
+        transparent: true, 
+        opacity: 0.7, 
+        transmission: 0.5,
+        thickness: 0.5
+      });
+      
+      const elementsGroup = new THREE.Group();
+      group.add(elementsGroup);
+
+      // 1. Big Building (Real Estate)
+      const towerBaseGeom = new THREE.BoxGeometry(2, 6, 2);
+      const tower = new THREE.Mesh(towerBaseGeom, glassMat);
+      tower.position.set(-2.5, 0, 0);
+      elementsGroup.add(tower);
+
+      // Building Details (Gold Framework)
+      for(let i = -3; i <= 3; i++) {
+        const ringGeom = new THREE.BoxGeometry(2.1, 0.05, 2.1);
+        const ring = new THREE.Mesh(ringGeom, goldMat);
+        ring.position.set(-2.5, i * 0.8, 0);
+        elementsGroup.add(ring);
+      }
+      
+      const verticalGeom = new THREE.BoxGeometry(0.05, 6, 0.05);
+      const corners = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+      corners.forEach(pos => {
+        const frame = new THREE.Mesh(verticalGeom, goldMat);
+        frame.position.set(-2.5 + (pos[0] * 1.05), 0, pos[1] * 1.05);
+        elementsGroup.add(frame);
+      });
+
+      // 2. Trading Visualization (Sticks & Chart)
+      const chartGroup = new THREE.Group();
+      chartGroup.position.set(2.5, 0, 0);
+      elementsGroup.add(chartGroup);
+
+      for(let i = 0; i < 5; i++) {
+        const height = 1 + Math.random() * 3;
+        const candleGeom = new THREE.BoxGeometry(0.4, height, 0.4);
+        const candle = new THREE.Mesh(candleGeom, i % 2 === 0 ? goldMat : glassMat);
+        candle.position.set(i * 0.8 - 1.6, (height/2) - 2, 0);
+        chartGroup.add(candle);
+
+        // Wick
+        const wickGeom = new THREE.CylinderGeometry(0.02, 0.02, height + 0.5);
+        const wick = new THREE.Mesh(wickGeom, goldMat);
+        wick.position.set(i * 0.8 - 1.6, (height/2) - 2, 0);
+        chartGroup.add(wick);
+      }
+
+      // Upward Trend Line
+      const curve = new THREE.CatmullRomCurve3([
+        new THREE.Vector3(-2, -2, 0),
+        new THREE.Vector3(-1, -1.5, 0.5),
+        new THREE.Vector3(0, -0.5, 0),
+        new THREE.Vector3(1, 1.5, 0.5),
+        new THREE.Vector3(2, 3, 0)
+      ]);
+      const points = curve.getPoints(50);
+      const lineGeom = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 64, 0.05, 8, false);
+      const lineMesh = new THREE.Mesh(lineGeom, goldMat);
+      lineMesh.position.set(2.5, 0, 0);
+      elementsGroup.add(lineMesh);
+
+      // Arrow Head
+      const arrowGeom = new THREE.ConeGeometry(0.2, 0.5, 16);
+      const arrow = new THREE.Mesh(arrowGeom, goldMat);
+      arrow.position.set(4.5, 3, 0);
+      arrow.rotation.z = -Math.PI / 6;
+      elementsGroup.add(arrow);
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0xd4af37, 2, 100);
+      pointLight.position.set(10, 10, 10);
+      scene.add(pointLight);
+
+      const spotLight = new THREE.SpotLight(0xffffff, 1);
+      spotLight.position.set(-10, 10, 5);
+      scene.add(spotLight);
+
+      camera.position.z = 14;
+
+      function animate() {
+        requestAnimationFrame(animate);
+        // Circular motion and prominent display
+        const time = Date.now() * 0.001;
+        group.rotation.y = time * 0.5;
+        elementsGroup.position.y = Math.sin(time) * 0.5;
+        renderer.render(scene, camera);
+      }
+
+      window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      animate();
+    }
+
+    initHero3D();
+    createServices3DScene('threejs-services-container');
+
+</script>
+
+
+</body></html>

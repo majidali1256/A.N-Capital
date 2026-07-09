@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — A.N Capital | Your Trust, Our Commitment</title>
+  <meta name="description" content="Discover A.N Capital's mission, executive heritage, core values, and institutional financial architecture." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#d4af37",
+            "primary-light": "#f2ca50",
+            surface: "#1a1a1a",
+            "surface-dim": "#131313",
+            "surface-high": "#242424",
+            "surface-highest": "#303030",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#b5ada0"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Custom Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="antialiased bg-[#111111] text-on-surface bg-architectural">
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 w-full z-50 bg-[#131313]/85 backdrop-blur-xl border-b border-primary/20 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo" alt="A.N Capital Monogram" class="h-10 w-10 object-contain group-hover:scale-105 transition-transform" />
+          <div class="flex flex-col">
+            <span class="font-display font-bold text-lg tracking-wider text-primary">A.N CAPITAL</span>
+            <span class="text-[9px] uppercase tracking-[0.25em] text-on-surface-variant">Invest • Trade • Grow</span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link active">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="process.html" class="nav-link">Process</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Trailing CTA -->
+        <div class="hidden md:flex items-center gap-4">
+          <button class="open-consultation-modal btn-primary-metallic px-5 py-2.5 rounded text-xs">
+            Get Consultation
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="md:hidden text-primary p-2 mobile-menu-toggle hover:opacity-80 transition-opacity" aria-label="Toggle Mobile Menu">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/70 z-50 md:hidden"></div>
+    <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-80 max-w-full bg-[#181818] border-l border-primary/30 z-50 p-6 flex flex-col justify-between md:hidden shadow-2xl">
+      <div>
+        <div class="flex justify-between items-center pb-6 border-b border-primary/20">
+          <span class="font-display text-primary font-bold text-lg">A.N CAPITAL</span>
+          <button id="close-mobile-drawer" class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 mt-8">
+          <a href="index.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Home</a>
+          <a href="about.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-primary">About Us</a>
+          <a href="services.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Services</a>
+          <a href="process.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Investment Process</a>
+          <a href="contact.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <button class="open-consultation-modal w-full btn-primary-metallic py-3 rounded text-xs font-bold mb-4">
+          Schedule Consultation
+        </button>
+        <div class="text-xs text-on-surface-variant space-y-1 font-mono">
+          <p>+92 314 9364821</p>
+          <p>Bahria Phase 7, Rawalpindi</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Hero Section with 3D Canvas Background -->
+    <section class="relative pt-20 pb-28 overflow-hidden bg-gradient-to-b from-[#131313] via-[#111111] to-[#141414] border-b border-primary/20">
+      <div id="threejs-about-hero" class="absolute inset-0 w-full h-full pointer-events-none opacity-80"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-in-up">
+        <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-4">Heritage &amp; Vision</span>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-on-surface mb-6 font-bold tracking-tight">
+          About <span class="gold-text-gradient">A.N Capital</span>
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed max-w-3xl mx-auto">
+          Your Trust, Our Commitment. We are dedicated to pioneering growth and securing enduring financial legacies through structural integrity, analytical rigor, and absolute transparency.
+        </p>
+        <div class="flex gap-4 justify-center">
+          <button class="open-consultation-modal btn-primary-metallic px-8 py-4 rounded text-xs font-bold">
+            Discover Our Vision
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Intro Split Section -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Boardroom Visual & Trust Badge -->
+        <div class="lg:col-span-6 relative rounded-2xl overflow-hidden shadow-2xl h-[480px] border border-primary/30">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF2JuH8jEjE9n_JU6XGP164mXgGXBbK027gMbK2ipH1zQZPpU14Sxu59uILiiJsqsb8Abm0eBx-HzTX5_mOlXbb-Ak4DmHxFBtrc-oKw0FXw4wCEkGu-MVyL46K0ZjYioeC9BUz9n0JR6g7swCMcGAVYYoYJJNqPkk0yTziHJiGK7-zsdOSZ12jHQ2qNqTjdfuObtVAA7RAB-wRPQ9epQTswvmmBj40qxCloAqIzoFI5f1Ss3xXmQTmw" alt="A.N Capital Boardroom" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-8 left-8 right-8">
+            <p class="text-primary text-xs uppercase tracking-[0.25em] font-bold mb-2">Established Excellence</p>
+            <p class="text-lg text-on-surface font-display">Decades of combined leadership in institutional wealth management and multi-asset trading.</p>
+          </div>
+        </div>
+
+        <!-- Right Content & Live Stats -->
+        <div class="lg:col-span-6">
+          <h2 class="font-display text-3xl md:text-4xl text-on-surface mb-8 border-l-4 border-primary pl-6 py-2">
+            Redefining Wealth<br>Management
+          </h2>
+          <div class="space-y-6 text-base text-on-surface-variant leading-relaxed">
+            <p>
+              A.N Capital was founded on a singular premise: that true wealth generation requires more than just capital—it demands profound trust, absolute transparency, and a relentless commitment to our clients' financial futures.
+            </p>
+            <p>
+              We cater exclusively to high-net-worth individuals and institutional investors, offering bespoke strategies that navigate complex markets with precision. Our approach marries traditional financial prudence with innovative, forward-looking quantitative insights.
+            </p>
+            <p>
+              By aligning our success directly with yours, we forge enduring partnerships that span generations, ensuring your legacy is not only preserved but actively propelled forward.
+            </p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 gap-8 border-t border-primary/20 pt-8">
+            <div>
+              <p class="font-display text-4xl text-primary font-bold mb-1">10+</p>
+              <p class="text-xs uppercase tracking-widest text-on-surface-variant">Years of Excellence</p>
+            </div>
+            <div>
+              <p class="font-display text-4xl text-primary font-bold mb-1">$5B+</p>
+              <p class="text-xs uppercase tracking-widest text-on-surface-variant">Assets Managed</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mission & Vision Glassmorphic Cards -->
+    <section class="py-20 bg-[#161616] border-y border-primary/15">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Mission Card -->
+        <div class="glass-panel p-10 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity duration-500">
+            <span class="material-symbols-outlined text-8xl text-primary">explore</span>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-2">Our Purpose</span>
+          <h3 class="font-display text-2xl md:text-3xl text-on-surface mb-6">Our Mission</h3>
+          <p class="text-base text-on-surface-variant leading-relaxed relative z-10">
+            To deliver unparalleled financial advisory and investment solutions by prioritizing structural integrity, rigorous analysis, and a steadfast dedication to client prosperity. We aim to be the definitive architecture behind your financial success.
+          </p>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="glass-panel p-10 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity duration-500">
+            <span class="material-symbols-outlined text-8xl text-primary">visibility</span>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-2">Our Horizon</span>
+          <h3 class="font-display text-2xl md:text-3xl text-on-surface mb-6">Our Vision</h3>
+          <p class="text-base text-on-surface-variant leading-relaxed relative z-10">
+            To be the globally recognized vanguard of elite wealth management, where every client relationship is a testament to enduring trust, and every investment decision is a step toward profound, sustainable growth.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Core Values Pillars -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-3">Guiding Principles</span>
+        <h2 class="font-display text-3xl md:text-4xl text-on-surface mb-4">Core Values</h2>
+        <p class="text-base text-on-surface-variant max-w-2xl mx-auto">
+          The principles that govern our decisions and define our institutional culture.
+        </p>
+        <div class="w-16 h-1 bg-primary mx-auto mt-6 rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        
+        <!-- Trust -->
+        <div class="service-card p-6 rounded-xl text-center group">
+          <div class="w-16 h-16 mx-auto rounded-full bg-surface-high border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary transition-all duration-300">
+            <span class="material-symbols-outlined text-3xl text-primary">handshake</span>
+          </div>
+          <h4 class="font-display text-lg text-on-surface mb-3">Trust</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            The foundation of every enduring relationship and successful portfolio.
+          </p>
+        </div>
+
+        <!-- Growth -->
+        <div class="service-card p-6 rounded-xl text-center group">
+          <div class="w-16 h-16 mx-auto rounded-full bg-surface-high border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary transition-all duration-300">
+            <span class="material-symbols-outlined text-3xl text-primary">trending_up</span>
+          </div>
+          <h4 class="font-display text-lg text-on-surface mb-3">Growth</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Relentless pursuit of advancement and sustainable long-term yield generation.
+          </p>
+        </div>
+
+        <!-- Professionalism -->
+        <div class="service-card p-6 rounded-xl text-center group">
+          <div class="w-16 h-16 mx-auto rounded-full bg-surface-high border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary transition-all duration-300">
+            <span class="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
+          </div>
+          <h4 class="font-display text-lg text-on-surface mb-3">Professionalism</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Exacting standards, profound expertise, and meticulous transaction execution.
+          </p>
+        </div>
+
+        <!-- Transparency -->
+        <div class="service-card p-6 rounded-xl text-center group">
+          <div class="w-16 h-16 mx-auto rounded-full bg-surface-high border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary transition-all duration-300">
+            <span class="material-symbols-outlined text-3xl text-primary">water_drop</span>
+          </div>
+          <h4 class="font-display text-lg text-on-surface mb-3">Transparency</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Clear, candid communication illuminating every financial maneuver and strategy.
+          </p>
+        </div>
+
+        <!-- Commitment -->
+        <div class="service-card p-6 rounded-xl text-center group">
+          <div class="w-16 h-16 mx-auto rounded-full bg-surface-high border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary transition-all duration-300">
+            <span class="material-symbols-outlined text-3xl text-primary">verified_user</span>
+          </div>
+          <h4 class="font-display text-lg text-on-surface mb-3">Commitment</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Unwavering dedication to safeguarding and growing your multi-generational legacy.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-b from-[#141414] to-[#111111] border-t border-primary/20 text-center">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl text-on-surface mb-4">Partner With Institutional Excellence</h2>
+        <p class="text-on-surface-variant text-base mb-8 max-w-2xl mx-auto">
+          Let A.N Capital serve as the architecture behind your wealth creation strategy. Schedule an introductory consultation today.
+        </p>
+        <button class="open-consultation-modal btn-primary-metallic px-10 py-4 rounded text-xs font-bold tracking-widest">
+          Initiate Confidential Dialogue
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-[#131313] border-t border-primary/20 pt-16 pb-12">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo" alt="A.N Capital Logo" class="h-12 w-12 object-contain" />
+            <span class="font-display font-bold text-xl text-primary">A.N CAPITAL</span>
+          </div>
+          <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
+            Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
+          </p>
+          <div class="flex gap-3">
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Location">
+              <span class="material-symbols-outlined text-lg">location_on</span>
+            </a>
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Phone">
+              <span class="material-symbols-outlined text-lg">phone</span>
+            </a>
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Email">
+              <span class="material-symbols-outlined text-lg">mail</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Site Navigation -->
+        <div>
+          <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Navigation</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-on-surface-variant hover:text-primary transition-colors">Our Services</a></li>
+            <li><a href="process.html" class="text-on-surface-variant hover:text-primary transition-colors">Investment Process</a></li>
+            <li><a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact Advisory Desk</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Details -->
+        <div>
+          <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Direct Desk</h4>
+          <ul class="space-y-3 text-sm text-on-surface-variant">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">phone</span>
+              <span class="font-mono">+92 314 9364821</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">phone</span>
+              <span class="font-mono">+92 322 4064491</span>
+            </li>
+            <li class="flex items-start gap-2 pt-2">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+              <span>Bahria Phase 7,<br>Rawalpindi</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Policies -->
+      <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+        <p>© 2024 A.N Capital. All Rights Reserved. Your Trust, Our Commitment.</p>
+        <div class="flex flex-wrap gap-6 uppercase tracking-wider">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-primary transition-colors">Investment Disclaimer</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Shared App & 3D Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/3d-engine.js"></script>
+  <script src="assets/js/scroll-3d-global.js"></script>
+</body>
+</html>

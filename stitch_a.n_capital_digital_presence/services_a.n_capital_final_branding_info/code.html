@@ -1,0 +1,737 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>A.N Capital - Our Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary": "#cfcece",
+                "primary-container": "#d4af37",
+                "on-primary-container": "#554300",
+                "surface-tint": "#e9c349",
+                "on-surface": "#e5e2e1",
+                "on-primary": "#3c2f00",
+                "surface": "#131313",
+                "surface-variant": "#353534",
+                "primary-fixed": "#ffe088",
+                "on-tertiary": "#2f3131",
+                "error-container": "#93000a",
+                "on-secondary-fixed": "#241a00",
+                "on-primary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#c6c6c6",
+                "inverse-surface": "#e5e2e1",
+                "secondary-fixed": "#ffe08b",
+                "on-tertiary-fixed-variant": "#464747",
+                "outline-variant": "#4d4635",
+                "on-secondary": "#3d2f00",
+                "surface-container-highest": "#353534",
+                "surface-container": "#201f1f",
+                "on-error": "#690005",
+                "surface-bright": "#3a3939",
+                "on-secondary-container": "#f3d273",
+                "surface-dim": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "background": "#0e0e0e",
+                "on-secondary-fixed-variant": "#584400",
+                "secondary-fixed-dim": "#e4c367",
+                "on-tertiary-fixed": "#1a1c1c",
+                "tertiary-fixed": "#e3e2e2",
+                "on-tertiary-container": "#444546",
+                "inverse-on-surface": "#313030",
+                "surface-container-low": "#1c1b1b",
+                "on-primary-fixed": "#241a00",
+                "outline": "#99907c",
+                "on-error-container": "#ffdad6",
+                "primary": "#d4af37",
+                "on-background": "#e5e2e1",
+                "on-surface-variant": "#d0c5af",
+                "secondary-container": "#715900",
+                "tertiary-container": "#b3b3b3",
+                "surface-container-lowest": "#0e0e0e",
+                "inverse-primary": "#735c00",
+                "error": "#ffb4ab",
+                "primary-fixed-dim": "#e9c349",
+                "secondary": "#e4c367"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "64px",
+                "container-max": "1280px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "section-gap": "80px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "title-md": [
+                        "Manrope"
+                ],
+                "body-sm": [
+                        "Manrope"
+                ],
+                "label-caps": [
+                        "Manrope"
+                ],
+                "headline-lg-mobile": [
+                        "Libre Caslon Text"
+                ],
+                "display-lg": [
+                        "Libre Caslon Text"
+                ],
+                "body-lg": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Libre Caslon Text"
+                ]
+        },
+        "fontSize": {
+                "title-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body { background-color: #0e0e0e; color: #e5e2e1; }
+        .glass-panel {
+            background-color: rgba(14, 14, 14, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .service-card {
+            background-color: rgba(32, 31, 31, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(153, 144, 124, 0.2);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37, #f3e5ab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #f3e5ab);
+            color: #111111;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-6{bottom:1.5rem}.left-6{left:1.5rem}.top-0{top:0px}.-z-20{z-index:-20}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-24{margin-top:6rem}.mt-8{margin-top:2rem}.mt-section-gap{margin-top:80px}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-12{height:3rem}.h-16{height:4rem}.h-64{height:16rem}.h-96{height:24rem}.h-full{height:100%}.w-12{width:3rem}.w-16{width:4rem}.w-24{width:6rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-container-max{max-width:1280px}.flex-1{flex:1 1 0%}.flex-grow{flex-grow:1}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-gutter{gap:24px}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.125rem}.rounded-lg{border-radius:0.25rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-primary{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.border-primary\/10{border-color:rgb(212 175 55 / 0.1)}.border-primary\/20{border-color:rgb(212 175 55 / 0.2)}.border-primary\/50{border-color:rgb(212 175 55 / 0.5)}.bg-background{--tw-bg-opacity:1;background-color:rgb(14 14 14 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(32 31 31 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(14 14 14 / var(--tw-bg-opacity, 1))}.bg-surface\/50{background-color:rgb(19 19 19 / 0.5)}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-surface-container{--tw-gradient-from:#201f1f var(--tw-gradient-from-position);--tw-gradient-to:rgb(32 31 31 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-margin-mobile{padding-left:20px;padding-right:20px}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-section-gap{padding-top:80px;padding-bottom:80px}.pb-1{padding-bottom:0.25rem}.pb-8{padding-bottom:2rem}.pt-16{padding-top:4rem}.pt-section-gap{padding-top:80px}.text-left{text-align:left}.text-center{text-align:center}.font-body-lg{font-family:Manrope}.font-body-sm{font-family:Manrope}.font-display-lg{font-family:Libre Caslon Text}.font-headline-lg{font-family:Libre Caslon Text}.font-headline-lg-mobile{font-family:Libre Caslon Text}.font-label-caps{font-family:Manrope}.font-title-md{font-family:Manrope}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-body-lg{font-size:16px;line-height:24px;font-weight:400}.text-body-sm{font-size:14px;line-height:20px;font-weight:400}.text-display-lg{font-size:48px;line-height:56px;letter-spacing:-0.02em;font-weight:700}.text-headline-lg{font-size:32px;line-height:40px;font-weight:600}.text-headline-lg-mobile{font-size:28px;line-height:36px;font-weight:600}.text-label-caps{font-size:12px;line-height:16px;letter-spacing:0.1em;font-weight:700}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-title-md{font-size:20px;line-height:28px;letter-spacing:0.05em;font-weight:600}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.tracking-tighter{letter-spacing:-0.05em}.tracking-widest{letter-spacing:0.1em}.text-on-surface{--tw-text-opacity:1;color:rgb(229 226 225 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(208 197 175 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-tertiary{--tw-text-opacity:1;color:rgb(207 206 206 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-50{opacity:0.5}.opacity-90{opacity:0.9}.shadow-\[0_0_15px_rgba\(212\2c 175\2c 55\2c 0\.2\)\]{--tw-shadow:0 0 15px rgba(212,175,55,0.2);--tw-shadow-colored:0 0 15px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.drop-shadow-lg{--tw-drop-shadow:drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1)}.hover\:-translate-y-3:hover{--tw-translate-y:-0.75rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-95:hover{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/10:hover{background-color:rgb(212 175 55 / 0.1)}.hover\:text-on-primary:hover{--tw-text-opacity:1;color:rgb(60 47 0 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.hover\:shadow-\[0_0_40px_rgba\(212\2c 175\2c 55\2c 0\.4\)\]:hover{--tw-shadow:0 0 40px rgba(212,175,55,0.4);--tw-shadow-colored:0 0 40px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:translate-x-2{--tw-translate-x:0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:col-span-1{grid-column:span 1 / span 1}.md\:col-span-3{grid-column:span 3 / span 3}.md\:col-span-4{grid-column:span 4 / span 4}.md\:mx-0{margin-left:0px;margin-right:0px}.md\:mt-0{margin-top:0px}.md\:block{display:block}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-12{gap:3rem}.md\:px-margin-desktop{padding-left:64px;padding-right:64px}.md\:text-left{text-align:left}}</style></head>
+<body class="font-body-lg antialiased relative bg-background" style="background-color: rgb(19, 19, 19);" data-mode="connect">
+<canvas class="fixed inset-0 w-full h-full -z-20 pointer-events-none" id="bg-shader" width="1280" height="1024"></canvas>
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-primary/20 shadow-md bg-surface-container-lowest">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<div class="w-12 h-12 flex items-center justify-center border border-primary/50 bg-surface-container rounded font-display-lg text-primary text-2xl tracking-tighter shadow-[0_0_15px_rgba(212,175,55,0.2)]"><img alt="A.N Capital Logo" class="w-full h-full object-contain p-1" src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo"></div>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-3 py-1 rounded-DEFAULT text-label-caps font-label-caps uppercase" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-3 py-1 rounded-DEFAULT text-label-caps font-label-caps uppercase" href="#">About</a>
+<a class="text-primary border-b-2 border-primary pb-1 text-label-caps font-label-caps uppercase" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-3 py-1 rounded-DEFAULT text-label-caps font-label-caps uppercase" href="#">Process</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-3 py-1 rounded-DEFAULT text-label-caps font-label-caps uppercase" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-3 py-1 rounded-DEFAULT text-label-caps font-label-caps uppercase" href="#">Contact</a>
+</div>
+<button class="hidden md:block btn-primary px-6 py-2 rounded font-title-md text-title-md hover:scale-95 transition-transform font-bold">
+                Get Consultation
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap relative z-10">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex-1 text-left md:text-left text-center">
+<h1 class="text-display-lg font-display-lg text-primary mb-4 drop-shadow-lg">Our Core Divisions</h1>
+<p class="text-title-md font-title-md text-on-surface-variant max-w-2xl md:mx-0 mx-auto drop-shadow-md">
+                Comprehensive financial solutions designed to protect and multiply your wealth across global markets. Invest | Trade | Grow.
+            </p>
+<div class="w-24 h-1 bg-primary md:mx-0 mx-auto mt-8 opacity-50"></div>
+</div>
+<div class="flex-1 w-full h-96 relative" id="threejs-container"><canvas width="1120" height="768" style="display: block; width: 560px; height: 384px;"></canvas><canvas width="1120" height="768" style="display: block; width: 560px; height: 384px;"></canvas></div>
+</div>
+</header>
+<!-- Bento Grid Services Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-24">
+<!-- Real Estate Investments -->
+<section class="service-card rounded-lg overflow-hidden flex flex-col group relative transition-all duration-700 ease-out transform hover:-translate-y-3 hover:scale-[1.02] hover:border-primary hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] bg-surface-container">
+<div class="h-64 w-full relative bg-surface-container-lowest" id="real-estate-3d">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 flex items-center gap-3 z-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl bg-surface/50 p-2 rounded backdrop-blur-sm transition-transform group-hover:scale-110 duration-500" style="font-variation-settings: 'FILL' 0;">location_city</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Real Estate Investments</h2>
+</div>
+<canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas><canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;" class=""></canvas></div>
+<div class="p-8 flex-grow flex flex-col justify-between bg-surface-container">
+<div>
+<p class="text-body-lg text-on-surface-variant mb-6 transition-all duration-500 opacity-90 group-hover:opacity-100">Access exclusive commercial and premium residential property portfolios with proven yields and long-term appreciation potential.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Prime Location Acquisitions</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Commercial Property Management</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Strategic Market Analysis</span>
+</li>
+</ul>
+</div>
+<button class="w-full border border-primary text-primary py-3 rounded text-label-caps font-label-caps hover:bg-primary hover:text-on-primary transition-colors uppercase tracking-widest font-bold">Explore Portfolio</button>
+</div>
+</section>
+<!-- Forex Trading -->
+<section class="service-card rounded-lg overflow-hidden flex flex-col group relative transition-all duration-700 ease-out transform hover:-translate-y-3 hover:scale-[1.02] hover:border-primary hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] bg-surface-container">
+<div class="h-64 w-full relative bg-surface-container-lowest" id="forex-3d">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 flex items-center gap-3 z-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl bg-surface/50 p-2 rounded backdrop-blur-sm transition-transform group-hover:scale-110 duration-500" style="font-variation-settings: 'FILL' 0;">currency_exchange</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Forex Trading</h2>
+</div>
+<canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas><canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas></div>
+<div class="p-8 flex-grow flex flex-col justify-between bg-surface-container">
+<div>
+<p class="text-body-lg text-on-surface-variant mb-6 transition-all duration-500 opacity-90 group-hover:opacity-100">Institutional-grade execution and rigorous risk management in global currency markets for optimized short and medium-term gains.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Algorithmic Trade Execution</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">24/5 Market Monitoring</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Advanced Risk Mitigation</span>
+</li>
+</ul>
+</div>
+<button class="w-full border border-primary text-primary py-3 rounded text-label-caps font-label-caps hover:bg-primary hover:text-on-primary transition-colors uppercase tracking-widest font-bold">View Strategies</button>
+</div>
+</section>
+<!-- Physical Trading -->
+<section class="service-card rounded-lg overflow-hidden flex flex-col group relative transition-all duration-700 ease-out transform hover:-translate-y-3 hover:scale-[1.02] hover:border-primary hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] bg-surface-container">
+<div class="h-64 w-full relative bg-surface-container-lowest" id="physical-3d">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 flex items-center gap-3 z-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl bg-surface/50 p-2 rounded backdrop-blur-sm transition-transform group-hover:scale-110 duration-500" style="font-variation-settings: 'FILL' 0;">language</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Physical Trading</h2>
+</div>
+<canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas><canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas></div>
+<div class="p-8 flex-grow flex flex-col justify-between bg-surface-container">
+<div>
+<p class="text-body-lg text-on-surface-variant mb-6 transition-all duration-500 opacity-90 group-hover:opacity-100">Global physical commodity trading operations ensuring secure supply chains and optimized international logistics.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Global Supply Chain Management</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Commodity Sourcing &amp; Procurement</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">International Logistics Networks</span>
+</li>
+</ul>
+</div>
+<button class="w-full border border-primary text-primary py-3 rounded text-label-caps font-label-caps hover:bg-primary hover:text-on-primary transition-colors uppercase tracking-widest font-bold">Discover Trading</button>
+</div>
+</section>
+<!-- Wealth Creation -->
+<section class="service-card rounded-lg overflow-hidden flex flex-col group relative transition-all duration-700 ease-out transform hover:-translate-y-3 hover:scale-[1.02] hover:border-primary hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] bg-surface-container">
+<div class="h-64 w-full relative bg-surface-container-lowest" id="wealth-3d">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 flex items-center gap-3 z-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl bg-surface/50 p-2 rounded backdrop-blur-sm transition-transform group-hover:scale-110 duration-500" style="font-variation-settings: 'FILL' 0;">trending_up</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Wealth Creation</h2>
+</div>
+<canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas><canvas width="1124" height="512" style="display: block; width: 562px; height: 256px;"></canvas></div>
+<div class="p-8 flex-grow flex flex-col justify-between bg-surface-container">
+<div>
+<p class="text-body-lg text-on-surface-variant mb-6 transition-all duration-500 opacity-90 group-hover:opacity-100">Strategic portfolio diversification and wealth management designed to compound assets and secure multi-generational financial growth.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Portfolio Diversification</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Asset Allocation Strategies</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-500 transform group-hover:translate-x-2" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-body-sm text-tertiary">Long-Term Growth Planning</span>
+</li>
+</ul>
+</div>
+<button class="w-full border border-primary text-primary py-3 rounded text-label-caps font-label-caps hover:bg-primary hover:text-on-primary transition-colors uppercase tracking-widest font-bold">Start Growing</button>
+</div>
+</section>
+</div>
+<!-- A.N Capital Advantage Section -->
+<section class="mt-section-gap pt-16 border-t border-primary/20">
+<div class="text-center mb-12">
+<h2 class="text-display-lg font-display-lg text-primary mb-4">The A.N Capital Advantage</h2>
+<p class="text-title-md font-title-md text-on-surface-variant max-w-2xl mx-auto">
+            Invest | Trade | Grow. Your Trust, Our Commitment.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<div class="p-6">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 block" style="font-variation-settings: 'FILL' 1;">security</span>
+<h3 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface mb-2">Secure Investments</h3>
+<p class="text-body-lg text-on-surface-variant">We prioritize capital protection through rigorous due diligence and risk assessment across all divisions.</p>
+</div>
+<div class="p-6">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 block" style="font-variation-settings: 'FILL' 1;">public</span>
+<h3 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface mb-2">Global Access</h3>
+<p class="text-body-lg text-on-surface-variant">Tap into international markets, from physical commodities to foreign exchange and prime real estate.</p>
+</div>
+<div class="p-6">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 block" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface mb-2">Expert Execution</h3>
+<p class="text-body-lg text-on-surface-variant">Our seasoned professionals utilize cutting-edge strategies to maximize returns and ensure sustainable growth.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-8 border-t border-primary/10 relative z-10 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"><div class="md:col-span-4 border-primary/10"><div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 py-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase tracking-widest" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase tracking-widest" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase tracking-widest" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase tracking-widest" href="#">Investment Process</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase tracking-widest" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase tracking-widest" href="#">Contact</a>
+</div></div>
+<div class="md:col-span-1">
+<div class="flex items-center mb-4">
+<div class="w-16 h-16 flex items-center justify-center border border-primary/50 bg-surface-container rounded font-display-lg text-primary text-3xl tracking-tighter shadow-[0_0_15px_rgba(212,175,55,0.2)]"><img alt="A.N Capital Logo" class="w-full h-full object-contain p-1" src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo"></div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mb-4 space-y-1">
+<p class="">+92 314 9364821</p>
+<p class="">+92 322 4064491</p>
+<p class="">Bahria Phase 7, Rawalpindi</p>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">© 2024 A.N Capital. Your Trust, Our Commitment.</p></div>
+<div class="md:col-span-3 flex flex-col md:flex-row justify-end gap-6 md:gap-12 mt-8 md:mt-0">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase" href="#">Investment Disclaimer</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps uppercase" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<script>
+// WebGL Background Shader
+(function() {
+    const canvas = document.getElementById('bg-shader');
+    const gl = canvas.getContext('webgl');
+    if (!gl) return;
+
+    const vsSource = `
+        attribute vec2 position;
+        varying vec2 v_texCoord;
+        void main() {
+            v_texCoord = position * 0.5 + 0.5;
+            gl_Position = vec4(position, 0.0, 1.0);
+        }
+    `;
+
+    const fsSource = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Create a slow, flowing liquid motion
+    float noise = sin(uv.x * 3.0 + u_time * 0.2) * cos(uv.y * 3.0 - u_time * 0.3);
+    noise += sin(uv.x * 5.0 - u_time * 0.4) * cos(uv.y * 2.0 + u_time * 0.2) * 0.5;
+    
+    // Base dark surface color (Luxury Black)
+    vec3 color = vec3(0.05, 0.05, 0.05);
+    
+    // Add subtle gold highlights (#d4af37)
+    vec3 gold = vec3(0.83, 0.69, 0.22);
+    float highlight = smoothstep(0.4, 0.9, noise * 0.5 + 0.5);
+    color = mix(color, gold * 0.15, highlight);
+    
+    // Mouse interaction glow
+    float dist = distance(uv, mouse);
+    float glow = smoothstep(0.3, 0.0, dist);
+    color += gold * glow * 0.05;
+    
+    // Edge vignette
+    float vignette = smoothstep(0.8, 0.3, length(uv - 0.5));
+    color *= vignette;
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+
+    function createShader(gl, type, source) {
+        const shader = gl.createShader(type);
+        gl.shaderSource(shader, source);
+        gl.compileShader(shader);
+        return shader;
+    }
+
+    const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+    const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+    const program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    gl.useProgram(program);
+
+    const positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+    gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+    const positionLocation = gl.getAttribLocation(program, "position");
+    gl.enableVertexAttribArray(positionLocation);
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+    const timeLocation = gl.getUniformLocation(program, "u_time");
+    const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+    const mouseLocation = gl.getUniformLocation(program, "u_mouse");
+
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = window.innerHeight - e.clientY;
+    });
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    let startTime = performance.now();
+    function render(time) {
+        gl.uniform1f(timeLocation, (time - startTime) / 1000.0);
+        gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+        gl.uniform2f(mouseLocation, mouseX, mouseY);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+})();
+
+// Three.js 3D Scene - Industry Assets
+(function() {
+    function create3DScene(containerId, createContent, cameraZ = 12) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        createContent(group);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xd4af37, 2, 100);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        const spotLight = new THREE.SpotLight(0xffffff, 1);
+        spotLight.position.set(-10, 10, 5);
+        scene.add(spotLight);
+
+        camera.position.z = cameraZ;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = Date.now() * 0.001;
+            
+            // Advanced 3D circular motion
+            group.position.x = Math.cos(time * 0.5) * 1;
+            group.position.z = Math.sin(time * 0.5) * 1;
+            group.rotation.y += 0.005;
+            
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        animate();
+    }
+
+    // Shared Materials
+    const goldMat = new THREE.MeshStandardMaterial({ 
+        color: 0xd4af37, 
+        metalness: 0.8, 
+        roughness: 0.2,
+        emissive: 0xd4af37,
+        emissiveIntensity: 0.1
+    });
+    const glassMat = new THREE.MeshPhysicalMaterial({ 
+        color: 0x3a3939, 
+        metalness: 0.9, 
+        roughness: 0.05, 
+        transparent: true, 
+        opacity: 0.7, 
+        transmission: 0.5,
+        thickness: 0.5
+    });
+
+    // Main Header Scene
+    create3DScene('threejs-container', (group) => {
+        // Building
+        const buildingGroup = new THREE.Group();
+        const towerGeom = new THREE.BoxGeometry(2, 6, 2);
+        const tower = new THREE.Mesh(towerGeom, glassMat);
+        buildingGroup.add(tower);
+
+        for(let i = -3; i <= 3; i++) {
+            const ringGeom = new THREE.BoxGeometry(2.1, 0.05, 2.1);
+            const ring = new THREE.Mesh(ringGeom, goldMat);
+            ring.position.set(0, i * 0.8, 0);
+            buildingGroup.add(ring);
+        }
+        
+        const verticalGeom = new THREE.BoxGeometry(0.05, 6, 0.05);
+        const corners = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+        corners.forEach(pos => {
+            const frame = new THREE.Mesh(verticalGeom, goldMat);
+            frame.position.set(pos[0] * 1.05, 0, pos[1] * 1.05);
+            buildingGroup.add(frame);
+        });
+        buildingGroup.position.set(-2.5, 0, 0);
+        group.add(buildingGroup);
+
+        // Chart
+        const chartGroup = new THREE.Group();
+        for(let i = 0; i < 5; i++) {
+            const height = 1 + Math.random() * 3;
+            const candleGeom = new THREE.BoxGeometry(0.4, height, 0.4);
+            const candle = new THREE.Mesh(candleGeom, i % 2 === 0 ? goldMat : glassMat);
+            candle.position.set(i * 0.8 - 1.6, (height/2) - 2, 0);
+            chartGroup.add(candle);
+
+            const wickGeom = new THREE.CylinderGeometry(0.02, 0.02, height + 0.5);
+            const wick = new THREE.Mesh(wickGeom, goldMat);
+            wick.position.set(i * 0.8 - 1.6, (height/2) - 2, 0);
+            chartGroup.add(wick);
+        }
+
+        const curve = new THREE.CatmullRomCurve3([
+            new THREE.Vector3(-2, -2, 0),
+            new THREE.Vector3(-1, -1.5, 0.5),
+            new THREE.Vector3(0, -0.5, 0),
+            new THREE.Vector3(1, 1.5, 0.5),
+            new THREE.Vector3(2, 3, 0)
+        ]);
+        const points = curve.getPoints(50);
+        const lineGeom = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 64, 0.05, 8, false);
+        const lineMesh = new THREE.Mesh(lineGeom, goldMat);
+        chartGroup.add(lineMesh);
+
+        const arrowGeom = new THREE.ConeGeometry(0.2, 0.5, 16);
+        const arrow = new THREE.Mesh(arrowGeom, goldMat);
+        arrow.position.set(2, 3, 0);
+        arrow.rotation.z = -Math.PI / 6;
+        chartGroup.add(arrow);
+
+        chartGroup.position.set(2.5, 0, 0);
+        group.add(chartGroup);
+    });
+
+    // Real Estate Card Scene
+    create3DScene('real-estate-3d', (group) => {
+        const buildingGroup = new THREE.Group();
+        const towerGeom = new THREE.BoxGeometry(3, 8, 3);
+        const tower = new THREE.Mesh(towerGeom, glassMat);
+        buildingGroup.add(tower);
+
+        for(let i = -4; i <= 4; i++) {
+            const ringGeom = new THREE.BoxGeometry(3.1, 0.08, 3.1);
+            const ring = new THREE.Mesh(ringGeom, goldMat);
+            ring.position.set(0, i * 0.9, 0);
+            buildingGroup.add(ring);
+        }
+        
+        const verticalGeom = new THREE.BoxGeometry(0.08, 8, 0.08);
+        const corners = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+        corners.forEach(pos => {
+            const frame = new THREE.Mesh(verticalGeom, goldMat);
+            frame.position.set(pos[0] * 1.55, 0, pos[1] * 1.55);
+            buildingGroup.add(frame);
+        });
+        buildingGroup.position.y = -1;
+        group.add(buildingGroup);
+    }, 14);
+
+    // Forex Trading Card Scene
+    create3DScene('forex-3d', (group) => {
+        const pillarGeo = new THREE.BoxGeometry(0.5, 3, 0.5);
+
+        const leftPillar = new THREE.Mesh(pillarGeo, goldMat);
+        leftPillar.position.set(-1, 0, 0);
+        leftPillar.rotation.z = 0.2;
+        group.add(leftPillar);
+
+        const rightPillar = new THREE.Mesh(pillarGeo, goldMat);
+        rightPillar.position.set(1, 0, 0);
+        rightPillar.rotation.z = -0.2;
+        group.add(rightPillar);
+
+        const beamGeo = new THREE.BoxGeometry(2, 0.2, 0.2);
+        for (let i = 0; i < 5; i++) {
+            const beam = new THREE.Mesh(beamGeo, goldMat);
+            beam.position.y = -1 + (i * 0.6);
+            beam.scale.x = 1 - (i * 0.15);
+            group.add(beam);
+        }
+    }, 8);
+
+    // Physical Trading Card Scene
+    create3DScene('physical-3d', (group) => {
+        const globeGeo = new THREE.SphereGeometry(2, 32, 32);
+        const globeMat = new THREE.MeshStandardMaterial({ 
+            color: 0x3a3939, 
+            wireframe: true,
+            transparent: true,
+            opacity: 0.5
+        });
+        const globe = new THREE.Mesh(globeGeo, globeMat);
+        group.add(globe);
+
+        const ringGeo = new THREE.TorusGeometry(2.5, 0.05, 16, 100);
+        const ring1 = new THREE.Mesh(ringGeo, goldMat);
+        ring1.rotation.x = Math.PI / 2;
+        group.add(ring1);
+
+        const ring2 = new THREE.Mesh(ringGeo, goldMat);
+        ring2.rotation.y = Math.PI / 2;
+        group.add(ring2);
+        
+        const boxGeo = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+        const box = new THREE.Mesh(boxGeo, goldMat);
+        group.add(box);
+    }, 10);
+
+    // Wealth Creation Card Scene
+    create3DScene('wealth-3d', (group) => {
+        const chartGroup = new THREE.Group();
+        for(let i = 0; i < 5; i++) {
+            const height = 1 + (i * 0.8);
+            const barGeom = new THREE.BoxGeometry(0.6, height, 0.6);
+            const bar = new THREE.Mesh(barGeom, goldMat);
+            bar.position.set(i * 1 - 2, (height/2) - 2, 0);
+            chartGroup.add(bar);
+        }
+
+        const arrowGeom = new THREE.ConeGeometry(0.4, 0.8, 16);
+        const arrow = new THREE.Mesh(arrowGeom, goldMat);
+        arrow.position.set(2.5, 3, 0);
+        arrow.rotation.z = -Math.PI / 4;
+        chartGroup.add(arrow);
+        
+        const bodyGeom = new THREE.CylinderGeometry(0.1, 0.1, 3);
+        const body = new THREE.Mesh(bodyGeom, goldMat);
+        body.position.set(1.5, 2, 0);
+        body.rotation.z = -Math.PI / 4;
+        chartGroup.add(body);
+
+        group.add(chartGroup);
+    }, 12);
+})();
+</script>
+
+
+</body></html>

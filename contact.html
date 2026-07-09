@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — A.N Capital | Private Wealth Executive Advisory Desk</title>
+  <meta name="description" content="Connect with A.N Capital's Executive Advisory Desk in Bahria Phase 7, Rawalpindi. Schedule a confidential wealth consultation." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#d4af37",
+            "primary-light": "#f2ca50",
+            surface: "#1a1a1a",
+            "surface-dim": "#131313",
+            "surface-high": "#242424",
+            "surface-highest": "#303030",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#b5ada0"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Custom Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="antialiased bg-[#111111] text-on-surface bg-architectural">
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 w-full z-50 bg-[#131313]/85 backdrop-blur-xl border-b border-primary/20 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo" alt="A.N Capital Monogram" class="h-10 w-10 object-contain group-hover:scale-105 transition-transform" />
+          <div class="flex flex-col">
+            <span class="font-display font-bold text-lg tracking-wider text-primary">A.N CAPITAL</span>
+            <span class="text-[9px] uppercase tracking-[0.25em] text-on-surface-variant">Invest • Trade • Grow</span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="process.html" class="nav-link">Process</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+
+        <!-- Trailing CTA -->
+        <div class="hidden md:flex items-center gap-4">
+          <button class="open-consultation-modal btn-primary-metallic px-5 py-2.5 rounded text-xs">
+            Get Consultation
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="md:hidden text-primary p-2 mobile-menu-toggle hover:opacity-80 transition-opacity" aria-label="Toggle Mobile Menu">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/70 z-50 md:hidden"></div>
+    <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-80 max-w-full bg-[#181818] border-l border-primary/30 z-50 p-6 flex flex-col justify-between md:hidden shadow-2xl">
+      <div>
+        <div class="flex justify-between items-center pb-6 border-b border-primary/20">
+          <span class="font-display text-primary font-bold text-lg">A.N CAPITAL</span>
+          <button id="close-mobile-drawer" class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 mt-8">
+          <a href="index.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Home</a>
+          <a href="about.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">About Us</a>
+          <a href="services.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Services</a>
+          <a href="process.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Investment Process</a>
+          <a href="contact.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-primary">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <button class="open-consultation-modal w-full btn-primary-metallic py-3 rounded text-xs font-bold mb-4">
+          Schedule Consultation
+        </button>
+        <div class="text-xs text-on-surface-variant space-y-1 font-mono">
+          <p>+92 314 9364821</p>
+          <p>Bahria Phase 7, Rawalpindi</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="py-20 max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl animate-fade-in-up">
+        <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-3">Secure Channels</span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-on-surface mb-6">
+          Connect with our <span class="gold-text-gradient">Executive Desk</span>
+        </h1>
+        <p class="text-lg text-on-surface-variant leading-relaxed">
+          We welcome confidential dialogues regarding portfolio management, institutional mandates, and bespoke multi-asset strategies.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Contact Grid -->
+    <main class="py-12 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Left Info Cards -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Headquarters -->
+        <div class="glass-panel p-8 rounded-2xl border border-primary/25">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-surface-high flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-2xl">location_on</span>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-wider text-on-surface-variant block">Primary Headquarters</span>
+              <h3 class="font-display text-xl text-on-surface">Rawalpindi Executive Suite</h3>
+            </div>
+          </div>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Bahria Phase 7,<br>
+            Rawalpindi, Pakistan
+          </p>
+        </div>
+
+        <!-- Direct Telephone -->
+        <div class="glass-panel p-8 rounded-2xl border border-primary/25">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-surface-high flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-2xl">phone_in_talk</span>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-wider text-on-surface-variant block">Direct Advisory Lines</span>
+              <h3 class="font-display text-xl text-on-surface">Private Wealth Desk</h3>
+            </div>
+          </div>
+          <div class="space-y-2 font-mono text-sm text-on-surface">
+            <p>+92 314 9364821</p>
+            <p>+92 322 4064491</p>
+          </div>
+        </div>
+
+        <!-- Secure Email -->
+        <div class="glass-panel p-8 rounded-2xl border border-primary/25">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-surface-high flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-2xl">mail_lock</span>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-wider text-on-surface-variant block">Encrypted Transmission</span>
+              <h3 class="font-display text-xl text-on-surface">Institutional Channel</h3>
+            </div>
+          </div>
+          <p class="font-mono text-sm text-on-surface">
+            advisory@ancapital.com
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right Contact Form -->
+      <div class="lg:col-span-7">
+        <div class="glass-panel p-8 sm:p-12 rounded-2xl border border-primary/30">
+          <h2 class="font-display text-2xl sm:text-3xl text-on-surface mb-2">Private Consultation Inquiry</h2>
+          <p class="text-sm text-on-surface-variant mb-8">
+            Complete the form below to request a secure briefing with a Senior Wealth Partner.
+          </p>
+
+          <form id="contact-page-form" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">First Name</label>
+                <input type="text" required placeholder="Lord / Dr. / Mr. / Ms."
+                  class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">Last Name</label>
+                <input type="text" required placeholder="Surname"
+                  class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">Direct Telephone</label>
+                <input type="tel" required placeholder="+92 / +1 (000) 000-0000"
+                  class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">Corporate / Private Email</label>
+                <input type="email" required placeholder="client@enterprise.com"
+                  class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">Primary Asset Class Interest</label>
+                <select required class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none">
+                  <option>Real Estate Portfolio Structuring</option>
+                  <option>Forex &amp; Quantitative Trading</option>
+                  <option>Physical Commodities Allocations</option>
+                  <option>Comprehensive Wealth Management</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">Estimated Mandate Range</label>
+                <select class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none">
+                  <option>$1,000,000 - $5,000,000 USD</option>
+                  <option>$5,000,000 - $25,000,000 USD</option>
+                  <option>$25,000,000+ USD Institutional</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-2">Confidential Objectives &amp; Notes</label>
+              <textarea rows="4" placeholder="Detail any specific portfolio requirements, timelines, or custody preferences..."
+                class="w-full bg-surface/80 border border-primary/30 rounded-lg px-4 py-3.5 text-sm text-on-surface focus:border-primary focus:outline-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-primary-metallic py-4 rounded-lg text-sm font-bold tracking-widest mt-2">
+              Transmit Secure Consultation Request
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Institutional Frequently Asked Questions -->
+    <section class="py-24 max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-3">Clarity &amp; Assurance</span>
+        <h2 class="font-display text-3xl text-on-surface">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group glass-panel rounded-xl border border-primary/20 open:border-primary/60 transition-all">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-display text-lg text-on-surface">
+            <span>What is A.N Capital's typical minimum investment mandate?</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-on-surface-variant leading-relaxed border-t border-white/5 pt-4">
+            While minimum allocation thresholds vary by asset class, our private advisory mandates typically commence at $1M USD equivalent. Bespoke institutional solutions and physical commodity trade finance programs are structured according to specific corporate liquidity requirements.
+          </div>
+        </details>
+
+        <details class="group glass-panel rounded-xl border border-primary/20 open:border-primary/60 transition-all">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-display text-lg text-on-surface">
+            <span>How does A.N Capital guarantee absolute client confidentiality?</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-on-surface-variant leading-relaxed border-t border-white/5 pt-4">
+            Client confidentiality is a cornerstone of our fiduciary responsibility. All communications, portfolio allocations, and identity records are safeguarded under strict multi-layered encryption and internationally recognized data protection frameworks.
+          </div>
+        </details>
+
+        <details class="group glass-panel rounded-xl border border-primary/20 open:border-primary/60 transition-all">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-display text-lg text-on-surface">
+            <span>Can I allocate capital across multiple divisions simultaneously?</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-on-surface-variant leading-relaxed border-t border-white/5 pt-4">
+            Certainly. Our multi-asset Wealth Creation mandates specifically construct integrated portfolios blending real estate yield generation, quantitative forex liquidity, and physical commodity bullion holdings.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-[#131313] border-t border-primary/20 pt-16 pb-12">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo" alt="A.N Capital Logo" class="h-12 w-12 object-contain" />
+            <span class="font-display font-bold text-xl text-primary">A.N CAPITAL</span>
+          </div>
+          <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
+            Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
+          </p>
+          <div class="flex gap-3">
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Location">
+              <span class="material-symbols-outlined text-lg">location_on</span>
+            </a>
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Phone">
+              <span class="material-symbols-outlined text-lg">phone</span>
+            </a>
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Email">
+              <span class="material-symbols-outlined text-lg">mail</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Site Navigation -->
+        <div>
+          <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Navigation</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-on-surface-variant hover:text-primary transition-colors">Our Services</a></li>
+            <li><a href="process.html" class="text-on-surface-variant hover:text-primary transition-colors">Investment Process</a></li>
+            <li><a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact Advisory Desk</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Details -->
+        <div>
+          <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Direct Desk</h4>
+          <ul class="space-y-3 text-sm text-on-surface-variant">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">phone</span>
+              <span class="font-mono">+92 314 9364821</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">phone</span>
+              <span class="font-mono">+92 322 4064491</span>
+            </li>
+            <li class="flex items-start gap-2 pt-2">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+              <span>Bahria Phase 7,<br>Rawalpindi</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Policies -->
+      <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+        <p>© 2024 A.N Capital. All Rights Reserved. Your Trust, Our Commitment.</p>
+        <div class="flex flex-wrap gap-6 uppercase tracking-wider">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-primary transition-colors">Investment Disclaimer</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Shared App & 3D Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/3d-engine.js"></script>
+</body>
+</html>

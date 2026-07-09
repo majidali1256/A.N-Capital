@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — A.N Capital | Wealth & Asset Management Divisions</title>
+  <meta name="description" content="Explore A.N Capital's Core Divisions: Real Estate Investments, Forex Trading, Physical Trading, and Bespoke Wealth Creation." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#d4af37",
+            "primary-light": "#f2ca50",
+            surface: "#1a1a1a",
+            "surface-dim": "#131313",
+            "surface-high": "#242424",
+            "surface-highest": "#303030",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#b5ada0"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Custom Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="antialiased bg-[#111111] text-on-surface bg-architectural">
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 w-full z-50 bg-[#131313]/85 backdrop-blur-xl border-b border-primary/20 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo" alt="A.N Capital Monogram" class="h-10 w-10 object-contain group-hover:scale-105 transition-transform" />
+          <div class="flex flex-col">
+            <span class="font-display font-bold text-lg tracking-wider text-primary">A.N CAPITAL</span>
+            <span class="text-[9px] uppercase tracking-[0.25em] text-on-surface-variant">Invest • Trade • Grow</span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="process.html" class="nav-link">Process</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Trailing CTA -->
+        <div class="hidden md:flex items-center gap-4">
+          <button class="open-consultation-modal btn-primary-metallic px-5 py-2.5 rounded text-xs">
+            Get Consultation
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="md:hidden text-primary p-2 mobile-menu-toggle hover:opacity-80 transition-opacity" aria-label="Toggle Mobile Menu">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/70 z-50 md:hidden"></div>
+    <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-80 max-w-full bg-[#181818] border-l border-primary/30 z-50 p-6 flex flex-col justify-between md:hidden shadow-2xl">
+      <div>
+        <div class="flex justify-between items-center pb-6 border-b border-primary/20">
+          <span class="font-display text-primary font-bold text-lg">A.N CAPITAL</span>
+          <button id="close-mobile-drawer" class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 mt-8">
+          <a href="index.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Home</a>
+          <a href="about.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">About Us</a>
+          <a href="services.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-primary">Services</a>
+          <a href="process.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Investment Process</a>
+          <a href="contact.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <button class="open-consultation-modal w-full btn-primary-metallic py-3 rounded text-xs font-bold mb-4">
+          Schedule Consultation
+        </button>
+        <div class="text-xs text-on-surface-variant space-y-1 font-mono">
+          <p>+92 314 9364821</p>
+          <p>Bahria Phase 7, Rawalpindi</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header & Interactive 3D Sphere Section -->
+    <header class="py-20 max-w-7xl mx-auto px-6 border-b border-primary/15">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 animate-fade-in-up">
+          <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-3">Institutional Capabilities</span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-on-surface mb-6">
+            Our <span class="gold-text-gradient">Core Divisions</span>
+          </h1>
+          <p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Comprehensive financial solutions engineered to protect, structure, and exponentially compound your wealth across global asset classes. Invest | Trade | Grow.
+          </p>
+          <div class="w-24 h-1 bg-primary mt-8 rounded opacity-80"></div>
+        </div>
+
+        <div class="lg:col-span-5 flex items-center justify-center">
+          <div id="threejs-services-header" class="w-full h-[340px] relative"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Core Divisions Bento Grid -->
+    <main class="py-24 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Real Estate Investments -->
+        <article class="service-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="h-60 w-full relative bg-[#131313] border-b border-primary/20 flex items-center justify-center p-8 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent z-10"></div>
+              <div class="absolute top-6 left-6 z-20 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl bg-black/60 p-2.5 rounded-lg border border-primary/20">location_city</span>
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-primary block">Division 01</span>
+                  <h2 class="font-display text-2xl text-on-surface">Real Estate Investments</h2>
+                </div>
+              </div>
+              <!-- Subtle decorative tower -->
+              <span class="material-symbols-outlined text-[#262626] text-[180px] select-none group-hover:scale-110 group-hover:text-[#2d2714] transition-all duration-700">domain</span>
+            </div>
+
+            <div class="p-8">
+              <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Access exclusive commercial and premium residential property portfolios with proven rental yields, institutional asset backing, and significant capital appreciation potential.
+              </p>
+
+              <ul class="space-y-3.5 mb-8">
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Prime Global Location Acquisitions &amp; Structuring</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Commercial Property &amp; High-Yield REIT Advisory</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Macroeconomic &amp; Urban Demographics Analytics</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-8 pt-0">
+            <button class="open-consultation-modal w-full btn-secondary-glass py-3.5 rounded text-xs font-bold tracking-widest">
+              Explore Real Estate Mandate
+            </button>
+          </div>
+        </article>
+
+        <!-- Forex Trading -->
+        <article class="service-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="h-60 w-full relative bg-[#131313] border-b border-primary/20 flex items-center justify-center p-8 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent z-10"></div>
+              <div class="absolute top-6 left-6 z-20 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl bg-black/60 p-2.5 rounded-lg border border-primary/20">currency_exchange</span>
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-primary block">Division 02</span>
+                  <h2 class="font-display text-2xl text-on-surface">Forex &amp; Algorithmic Trading</h2>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#262626] text-[180px] select-none group-hover:scale-110 group-hover:text-[#2d2714] transition-all duration-700">candlestick_chart</span>
+            </div>
+
+            <div class="p-8">
+              <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Advanced quantitative algorithmic models and institutional liquidity access across G10 and emerging market currency pairs, delivering alpha with strict risk controls.
+              </p>
+
+              <ul class="space-y-3.5 mb-8">
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Proprietary High-Frequency &amp; Algorithmic Execution</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Automated Drawdown Protection &amp; Dynamic Hedging</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Direct Tier-1 Institutional Bank Liquidity Pools</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-8 pt-0">
+            <button class="open-consultation-modal w-full btn-secondary-glass py-3.5 rounded text-xs font-bold tracking-widest">
+              Explore Trading Strategies
+            </button>
+          </div>
+        </article>
+
+        <!-- Physical Commodities Trading -->
+        <article class="service-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="h-60 w-full relative bg-[#131313] border-b border-primary/20 flex items-center justify-center p-8 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent z-10"></div>
+              <div class="absolute top-6 left-6 z-20 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl bg-black/60 p-2.5 rounded-lg border border-primary/20">directions_boat</span>
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-primary block">Division 03</span>
+                  <h2 class="font-display text-2xl text-on-surface">Physical Commodities</h2>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#262626] text-[180px] select-none group-hover:scale-110 group-hover:text-[#2d2714] transition-all duration-700">oil_barrel</span>
+            </div>
+
+            <div class="p-8">
+              <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Direct access to physical energy, precious metals, and industrial commodities supply chains, providing tangible inflation protection and geopolitical hedge.
+              </p>
+
+              <ul class="space-y-3.5 mb-8">
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Allocations in Physical Bullion Gold &amp; Precious Metals</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Secure Insured Swiss &amp; Global Vault Storage Operations</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Direct Supply Chain Arbitrage &amp; Trade Finance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-8 pt-0">
+            <button class="open-consultation-modal w-full btn-secondary-glass py-3.5 rounded text-xs font-bold tracking-widest">
+              Explore Physical Mandate
+            </button>
+          </div>
+        </article>
+
+        <!-- Wealth Creation & Portfolio Advisory -->
+        <article class="service-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="h-60 w-full relative bg-[#131313] border-b border-primary/20 flex items-center justify-center p-8 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent z-10"></div>
+              <div class="absolute top-6 left-6 z-20 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl bg-black/60 p-2.5 rounded-lg border border-primary/20">bar_chart</span>
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-primary block">Division 04</span>
+                  <h2 class="font-display text-2xl text-on-surface">Wealth Creation</h2>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#262626] text-[180px] select-none group-hover:scale-110 group-hover:text-[#2d2714] transition-all duration-700">pie_chart</span>
+            </div>
+
+            <div class="p-8">
+              <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Holistic multi-generational portfolio structuring, tax-optimized asset structuring, and institutional discretionary wealth preservation mandates.
+              </p>
+
+              <ul class="space-y-3.5 mb-8">
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Bespoke Multi-Asset Portfolio Construction &amp; Rebalancing</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Multi-Generational Legacy &amp; Trust Architecture</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-on-surface">
+                  <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                  <span>Dedicated Private Wealth Partner &amp; 24/7 Concierge</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-8 pt-0">
+            <button class="open-consultation-modal w-full btn-secondary-glass py-3.5 rounded text-xs font-bold tracking-widest">
+              Explore Wealth Architecture
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Consultation CTA -->
+    <section class="py-20 bg-gradient-to-b from-[#141414] to-[#111111] border-t border-primary/20 text-center">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl text-on-surface mb-4">Ready to Discuss Your Investment Mandate?</h2>
+        <p class="text-on-surface-variant text-base mb-8 max-w-2xl mx-auto">
+          Connect directly with our Executive Advisory Desk for a confidential briefing tailored to your portfolio objectives.
+        </p>
+        <button class="open-consultation-modal btn-primary-metallic px-10 py-4 rounded text-xs font-bold tracking-widest">
+          Schedule Confidential Briefing
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-[#131313] border-t border-primary/20 pt-16 pb-12">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://lh3.googleusercontent.com/aida/AP1WRLvvUgwn_cwrePr78YOHuKEC4iBQBDOuxhrNG7i43aSXYiXsQ6oaY6Hu3JdfQT36IQAF-IkdhwZWYgJQay6JkodiikHM995_VXTEm6yUfJeccLkxy1oCIc2jK-wkfgp24lDCt5v5dwbciGpGJBGXTQYXQJ8TVSzgZIwRwl12yjzqlswvYD0QNY8R7wSEhhCExZy0Y0xUEXSn1WEGXyTYfxb3Ik85ygJOzU-Dfcou1kQVH-_K5KachrO1Lpo" alt="A.N Capital Logo" class="h-12 w-12 object-contain" />
+            <span class="font-display font-bold text-xl text-primary">A.N CAPITAL</span>
+          </div>
+          <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
+            Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
+          </p>
+          <div class="flex gap-3">
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Location">
+              <span class="material-symbols-outlined text-lg">location_on</span>
+            </a>
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Phone">
+              <span class="material-symbols-outlined text-lg">phone</span>
+            </a>
+            <a href="contact.html" class="w-10 h-10 rounded-full bg-surface-high flex items-center justify-center text-primary hover:bg-primary hover:text-[#111111] transition-colors" aria-label="Email">
+              <span class="material-symbols-outlined text-lg">mail</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Site Navigation -->
+        <div>
+          <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Navigation</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-on-surface-variant hover:text-primary transition-colors">Our Services</a></li>
+            <li><a href="process.html" class="text-on-surface-variant hover:text-primary transition-colors">Investment Process</a></li>
+            <li><a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact Advisory Desk</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Details -->
+        <div>
+          <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Direct Desk</h4>
+          <ul class="space-y-3 text-sm text-on-surface-variant">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">phone</span>
+              <span class="font-mono">+92 314 9364821</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">phone</span>
+              <span class="font-mono">+92 322 4064491</span>
+            </li>
+            <li class="flex items-start gap-2 pt-2">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+              <span>Bahria Phase 7,<br>Rawalpindi</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Policies -->
+      <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+        <p>© 2024 A.N Capital. All Rights Reserved. Your Trust, Our Commitment.</p>
+        <div class="flex flex-wrap gap-6 uppercase tracking-wider">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-primary transition-colors">Investment Disclaimer</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Shared App & 3D Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/3d-engine.js"></script>
+  <script src="assets/js/scroll-3d-global.js"></script>
+</body>
+</html>

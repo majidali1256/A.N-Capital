@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.N Capital - Investment Process</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "tertiary": "#cfcece",
+                        "on-secondary": "#3d2f00",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#554300",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#584400",
+                        "inverse-primary": "#735c00",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#4d4635",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-tertiary": "#2f3131",
+                        "surface": "#131313",
+                        "outline": "#99907c",
+                        "on-primary": "#3c2f00",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#b3b3b3",
+                        "tertiary-fixed": "#e3e2e2",
+                        "primary-container": "#d4af37",
+                        "background": "#131313",
+                        "on-secondary-container": "#f3d273",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffe088",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#444546",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#241a00",
+                        "primary": "#f2ca50",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#e4c367",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed": "#ffe08b",
+                        "secondary-container": "#715900",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#e4c367",
+                        "on-surface-variant": "#d0c5af"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "80px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-sm": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .timeline-line {
+            transition: height 1s ease-out;
+        }
+        .timeline-icon-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen flex flex-col">
+<!-- TopNavBar Shared Component -->
+<nav class="bg-surface/70 dark:bg-surface/70 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-primary/20 shadow-md">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2"><img alt="A.N Capital Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLu2IPRv4PnmP4FCB0OBPwxIGbRa1TTdTF8a48H8b46n8a7XC-lLWjlRlY_DhkxP1juooTB_haIE58GYS0L6o34f57p0ATJV9WQJyM35J1TfxuhuqgaUDTTtRD85yFw1R0BaUBxq3peWAseLvRe7MqA7ODjDyuUvKXqDmkbwZuo_PrRSvGSEg_HW44_QW10c1bvn-ZL0KPLI2veym36A6I16vliH_MY61u4UUPJy_uvTMkNx-XtIkkwrGOQ"/></div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Services</a>
+<a class="text-primary border-b-2 border-primary pb-1 text-label-caps font-label-caps" href="#">Process</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Contact</a>
+</div>
+<button class="gold-gradient text-on-primary font-bold text-label-caps font-label-caps px-6 py-2 rounded-DEFAULT hover:opacity-90 transition-opacity hidden md:block">
+                Get Consultation
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="relative w-full pt-section-gap pb-16 px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center text-center overflow-hidden">
+<div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+<div class="w-full h-full bg-transparent" id="threejs-container"></div>
+</div>
+<div class="max-w-3xl z-10 relative">
+<h1 class="text-display-lg font-display-lg text-primary mb-4">How We Work</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                    A simple and clear process designed to build trust and ensure sustainable growth for your investments. We guide you every step of the way.
+                </p>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none flex items-center justify-center overflow-hidden">
+<div class="w-[800px] h-[800px] rounded-full border border-primary/20 flex items-center justify-center">
+<div class="w-[600px] h-[600px] rounded-full border border-primary/30 flex items-center justify-center">
+<div class="w-[400px] h-[400px] rounded-full border border-primary/40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative">
+<div class="relative wrap overflow-hidden p-10 h-full">
+<!-- Vertical Line -->
+<div class="absolute border-opacity-20 border-primary h-full border" style="left: 50%;"></div>
+<!-- Animated Progress Line (JS controlled) -->
+<div class="absolute border-opacity-100 border-primary h-0 border timeline-line" id="progress-line" style="left: 50%; top: 0px; height: 100%;"></div>
+<!-- Step 1 -->
+<div class="mb-8 flex justify-between items-center w-full right-timeline transition-all duration-700 ease-out step-item opacity-100 translate-y-0">
+<div class="order-1 w-5/12"></div>
+<div class="z-20 flex items-center order-1 bg-[#111111] shadow-xl w-16 h-16 rounded-full border border-primary justify-center transition-all duration-500 step-icon timeline-icon-glow">
+<span class="material-symbols-outlined text-primary text-[32px]">handshake</span>
+</div>
+<div class="order-1 bg-[#111111] border border-tertiary/10 rounded-xl shadow-xl w-5/12 px-6 py-4 hover:border-primary/50 transition-colors">
+<h3 class="mb-3 font-title-md text-title-md text-primary">1. Consultation</h3>
+<p class="text-sm leading-snug tracking-wide text-on-surface-variant text-opacity-100 font-body-sm text-body-sm">
+                            We begin by understanding your financial goals, risk tolerance, and current portfolio. This initial meeting sets the foundation for our tailored approach.
+                        </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline transition-all duration-700 ease-out step-item opacity-100 translate-y-0" style="transition-delay: 200ms;">
+<div class="order-1 w-5/12"></div>
+<div class="z-20 flex items-center order-1 bg-[#111111] shadow-xl w-16 h-16 rounded-full border border-primary justify-center transition-all duration-500 step-icon timeline-icon-glow">
+<span class="material-symbols-outlined text-primary text-[32px]">architecture</span>
+</div>
+<div class="order-1 bg-[#111111] border border-tertiary/10 rounded-xl shadow-xl w-5/12 px-6 py-4 hover:border-primary/50 transition-colors text-right">
+<h3 class="mb-3 font-title-md text-title-md text-primary">2. Planning</h3>
+<p class="text-sm font-medium leading-snug tracking-wide text-on-surface-variant text-opacity-100 font-body-sm text-body-sm">
+                            Our experts design a bespoke investment strategy. We construct a diversified portfolio model designed to weather market volatility while aiming for your specific targets.
+                        </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="mb-8 flex justify-between items-center w-full right-timeline transition-all duration-700 ease-out step-item opacity-100 translate-y-0" style="transition-delay: 400ms;">
+<div class="order-1 w-5/12"></div>
+<div class="z-20 flex items-center order-1 bg-[#111111] shadow-xl w-16 h-16 rounded-full border border-primary justify-center transition-all duration-500 step-icon timeline-icon-glow">
+<span class="material-symbols-outlined text-primary text-[32px]">manage_search</span>
+</div>
+<div class="order-1 bg-[#111111] border border-tertiary/10 rounded-xl shadow-xl w-5/12 px-6 py-4 hover:border-primary/50 transition-colors">
+<h3 class="mb-3 font-title-md text-title-md text-primary">3. Opportunity Selection</h3>
+<p class="text-sm leading-snug tracking-wide text-on-surface-variant text-opacity-100 font-body-sm text-body-sm">
+                            We rigorously screen real estate, forex, and physical trading markets to identify the most lucrative and secure opportunities that align with your plan.
+                        </p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline transition-all duration-700 ease-out step-item opacity-100 translate-y-0" style="transition-delay: 600ms;">
+<div class="order-1 w-5/12"></div>
+<div class="z-20 flex items-center order-1 bg-[#111111] shadow-xl w-16 h-16 rounded-full border border-primary justify-center transition-all duration-500 step-icon timeline-icon-glow">
+<span class="material-symbols-outlined text-primary text-[32px]">support_agent</span>
+</div>
+<div class="order-1 bg-[#111111] border border-tertiary/10 rounded-xl shadow-xl w-5/12 px-6 py-4 hover:border-primary/50 transition-colors text-right">
+<h3 class="mb-3 font-title-md text-title-md text-primary">4. Investment Support</h3>
+<p class="text-sm font-medium leading-snug tracking-wide text-on-surface-variant text-opacity-100 font-body-sm text-body-sm">
+                            Execution is seamless. We handle the complexities of the transactions and provide continuous support, keeping you informed with transparent reporting.
+                        </p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="mb-8 flex justify-between items-center w-full right-timeline transition-all duration-700 ease-out step-item opacity-100 translate-y-0" style="transition-delay: 800ms;">
+<div class="order-1 w-5/12"></div>
+<div class="z-20 flex items-center order-1 bg-[#111111] shadow-xl w-16 h-16 rounded-full border border-primary justify-center transition-all duration-500 step-icon timeline-icon-glow">
+<span class="material-symbols-outlined text-primary text-[32px]">trending_up</span>
+</div>
+<div class="order-1 bg-[#111111] border border-tertiary/10 rounded-xl shadow-xl w-5/12 px-6 py-4 hover:border-primary/50 transition-colors">
+<h3 class="mb-3 font-title-md text-title-md text-primary">5. Growth</h3>
+<p class="text-sm leading-snug tracking-wide text-on-surface-variant text-opacity-100 font-body-sm text-body-sm">
+                            We actively monitor and manage your investments, making strategic adjustments to optimize growth and protect your wealth over the long term.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 px-margin-mobile md:px-margin-desktop bg-[#111111] border-y border-primary/10 flex flex-col items-center justify-center text-center mt-auto">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-4">Ready to Start?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8 max-w-2xl">
+                Join A.N Capital and let us build your wealth with transparency and expertise.
+            </p>
+<button class="gold-gradient text-on-primary font-bold text-title-md font-title-md px-8 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                Schedule a Consultation
+            </button>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full pt-section-gap pb-8 border-t border-primary/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto mb-8">
+<div class="col-span-1"><div class="flex flex-col items-start mb-4"><img alt="A.N Capital Logo" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLu2IPRv4PnmP4FCB0OBPwxIGbRa1TTdTF8a48H8b46n8a7XC-lLWjlRlY_DhkxP1juooTB_haIE58GYS0L6o34f57p0ATJV9WQJyM35J1TfxuhuqgaUDTTtRD85yFw1R0BaUBxq3peWAseLvRe7MqA7ODjDyuUvKXqDmkbwZuo_PrRSvGSEg_HW44_QW10c1bvn-ZL0KPLI2veym36A6I16vliH_MY61u4UUPJy_uvTMkNx-XtIkkwrGOQ"/></div><p class="text-body-sm font-body-sm text-on-surface-variant opacity-70">Your Trust, Our Commitment.</p></div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-6 justify-start md:justify-end items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Investment Disclaimer</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-caps font-label-caps" href="#">Cookie Policy</a>
+</div>
+</div>
+<div class="text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<p class="text-body-sm font-body-sm text-on-surface-variant">© 2024 A.N Capital. Your Trust, Our Commitment.</p>
+</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r128/three.min.js"></script>
+<script>
+    (function() {
+      const container = document.getElementById('threejs-container');
+      if(!container) return;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      container.appendChild(renderer.domElement);
+
+      const group = new THREE.Group();
+      scene.add(group);
+
+      // Materials
+      const goldMat = new THREE.MeshStandardMaterial({ 
+        color: 0xd4af37, 
+        metalness: 0.8, 
+        roughness: 0.2,
+        emissive: 0xd4af37,
+        emissiveIntensity: 0.1
+      });
+      const glassMat = new THREE.MeshPhysicalMaterial({ 
+        color: 0x3a3939, 
+        metalness: 0.9, 
+        roughness: 0.05, 
+        transparent: true, 
+        opacity: 0.7, 
+        transmission: 0.5,
+        thickness: 0.5
+      });
+      const glowMat = new THREE.MeshBasicMaterial({ color: 0xfff0b3 });
+
+      // 1. Building Group (Real Estate Node)
+      const buildingGroup = new THREE.Group();
+      const towerBaseGeom = new THREE.BoxGeometry(1.5, 4, 1.5);
+      const tower = new THREE.Mesh(towerBaseGeom, glassMat);
+      buildingGroup.add(tower);
+      for(let i = -2; i <= 2; i++) {
+        const ringGeom = new THREE.BoxGeometry(1.6, 0.05, 1.6);
+        const ring = new THREE.Mesh(ringGeom, goldMat);
+        ring.position.set(0, i * 0.8, 0);
+        buildingGroup.add(ring);
+      }
+      buildingGroup.position.set(-3, 0, 0);
+      group.add(buildingGroup);
+
+      // 2. Trading Group (Market Node)
+      const chartGroup = new THREE.Group();
+      for(let i = 0; i < 4; i++) {
+        const height = 1 + Math.random() * 2;
+        const candleGeom = new THREE.BoxGeometry(0.3, height, 0.3);
+        const candle = new THREE.Mesh(candleGeom, i % 2 === 0 ? goldMat : glassMat);
+        candle.position.set(i * 0.6 - 0.9, (height/2) - 1.5, 0);
+        chartGroup.add(candle);
+        const wickGeom = new THREE.CylinderGeometry(0.02, 0.02, height + 0.5);
+        const wick = new THREE.Mesh(wickGeom, goldMat);
+        wick.position.set(i * 0.6 - 0.9, (height/2) - 1.5, 0);
+        chartGroup.add(wick);
+      }
+      chartGroup.position.set(3, 0, 0);
+      group.add(chartGroup);
+
+      // 3. Process Group (Strategy Node)
+      const processGroup = new THREE.Group();
+      const sphereGeom = new THREE.SphereGeometry(1, 16, 16);
+      const sphere = new THREE.Mesh(sphereGeom, glassMat);
+      processGroup.add(sphere);
+      const ringGeomOuter = new THREE.TorusGeometry(1.5, 0.05, 16, 100);
+      const ringOuter = new THREE.Mesh(ringGeomOuter, goldMat);
+      ringOuter.rotation.x = Math.PI / 2;
+      processGroup.add(ringOuter);
+      processGroup.position.set(0, 0, -3);
+      group.add(processGroup);
+
+      // 4. Growth Group (Yield Node)
+      const growthGroup = new THREE.Group();
+      const pyramidGeom = new THREE.ConeGeometry(1, 2, 4);
+      const pyramid = new THREE.Mesh(pyramidGeom, goldMat);
+      growthGroup.add(pyramid);
+      growthGroup.position.set(0, 0, 3);
+      group.add(growthGroup);
+
+      // Connect Nodes with Lines
+      const points = [];
+      points.push(buildingGroup.position);
+      points.push(processGroup.position);
+      points.push(chartGroup.position);
+      points.push(growthGroup.position);
+      points.push(buildingGroup.position);
+      
+      const lineGeom = new THREE.BufferGeometry().setFromPoints(points);
+      const lineMat = new THREE.LineBasicMaterial({ color: 0xd4af37, opacity: 0.5, transparent: true });
+      const connections = new THREE.Line(lineGeom, lineMat);
+      group.add(connections);
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0xd4af37, 2, 100);
+      pointLight.position.set(10, 10, 10);
+      scene.add(pointLight);
+
+      const spotLight = new THREE.SpotLight(0xffffff, 1);
+      spotLight.position.set(-10, 10, 5);
+      scene.add(spotLight);
+
+      camera.position.z = 12;
+
+      function animate() {
+        requestAnimationFrame(animate);
+        
+        // Circular motion and rotation matching reference style
+        const time = Date.now() * 0.001;
+        group.position.x = Math.cos(time * 0.5) * 1;
+        group.position.z = Math.sin(time * 0.5) * 1;
+        group.rotation.y += 0.005;
+
+        // Subtle individual node rotations
+        processGroup.rotation.y += 0.01;
+        processGroup.rotation.z += 0.01;
+        growthGroup.rotation.y += 0.02;
+
+        renderer.render(scene, camera);
+      }
+
+      window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      animate();
+    })();
+  </script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = document.querySelectorAll('.step-item');
+            const progressLine = document.getElementById('progress-line');
+            const icons = document.querySelectorAll('.step-icon');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Animate item in
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        
+                        // Glow icon
+                        const icon = entry.target.querySelector('.step-icon');
+                        if(icon) {
+                            icon.classList.add('timeline-icon-glow');
+                            icon.classList.replace('border-primary/50', 'border-primary');
+                        }
+
+                        // Calculate progress line height based on visible items
+                        const visibleSteps = document.querySelectorAll('.step-item.opacity-100').length;
+                        const totalSteps = steps.length;
+                        const containerHeight = document.querySelector('.wrap').offsetHeight;
+                        
+                        // Roughly calculate percentage of height to fill
+                        const percentage = (visibleSteps / totalSteps) * 100;
+                        progressLine.style.height = `${percentage}%`;
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            steps.forEach(step => observer.observe(step));
+            
+            // Initial animation trigger for items already in view on load
+            setTimeout(() => {
+                steps.forEach(step => {
+                    const rect = step.getBoundingClientRect();
+                    if(rect.top < window.innerHeight) {
+                         step.classList.remove('opacity-0', 'translate-y-8');
+                         step.classList.add('opacity-100', 'translate-y-0');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body></html>
