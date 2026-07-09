@@ -173,7 +173,16 @@ function initHeroMonogram3D(containerId) {
   }
 
   scene.add(group);
-  camera.position.z = 5.2;
+
+  function updateHeroCamera() {
+    const w = container.clientWidth || 560;
+    const h = container.clientHeight || 500;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.position.z = w < 640 ? 6.5 : 5.2;
+    camera.updateProjectionMatrix();
+  }
+  updateHeroCamera();
 
   function animate() {
     requestAnimationFrame(animate);
@@ -183,13 +192,7 @@ function initHeroMonogram3D(containerId) {
   }
   animate();
 
-  window.addEventListener('resize', () => {
-    const w = container.clientWidth || 560;
-    const h = container.clientHeight || 500;
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-  });
+  window.addEventListener('resize', updateHeroCamera, { passive: true });
 }
 
 /**
@@ -338,8 +341,22 @@ function initServices3DScene(containerId) {
   pointLight.position.set(10, 12, 10);
   scene.add(pointLight);
 
-  camera.position.set(0, 1.2, 11.5);
-  camera.lookAt(0, 0, 0);
+  function updateCameraForResponsive() {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    if (w < 640) {
+      camera.position.set(0, 1.4, 16.8);
+    } else if (w < 1024) {
+      camera.position.set(0, 1.3, 13.8);
+    } else {
+      camera.position.set(0, 1.2, 11.5);
+    }
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  }
+  updateCameraForResponsive();
 
   const divisionGroups = [realEstateGroup, chartGroup, cargoGroup, wealthGroup];
 
@@ -382,11 +399,7 @@ function initServices3DScene(containerId) {
   }
   animate();
 
-  window.addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
+  window.addEventListener('resize', updateCameraForResponsive, { passive: true });
 }
 
 /**
