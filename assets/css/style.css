@@ -181,22 +181,46 @@ h1, h2, h3, .font-display {
   background-size: 48px 48px;
 }
 
-/* Service Card Interactive Animations */
+/* Top-Class Interactive Cards with Mouse Spotlight & Luxury Elevation */
 .service-card {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(212, 175, 55, 0.12);
-  background: #181818;
+  position: relative;
+  transition: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  background: #161616;
+  background-image: radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.12), transparent 45%);
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, transparent 40%, transparent 60%, rgba(242, 202, 80, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.2);
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.88), 0 0 35px rgba(212, 175, 55, 0.26);
 }
 
-/* Timeline Icons */
+.service-card:hover::after {
+  opacity: 1;
+}
+
+/* Timeline Icons & Glowing Ambient Radiance */
 .timeline-icon-glow {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+  animation: icon-radiance-pulse 3.5s infinite ease-in-out;
+}
+
+@keyframes icon-radiance-pulse {
+  0%, 100% { box-shadow: 0 0 22px rgba(212, 175, 55, 0.4); }
+  50% { box-shadow: 0 0 36px rgba(212, 175, 55, 0.75); }
 }
 
 /* ==========================================================================
@@ -345,18 +369,55 @@ details > summary::-webkit-details-marker {
 }
 
 /* ==========================================================================
- * CLEAN ELEGANT SCROLL REVEAL STYLES
+ * TOP-CLASS SCROLL REVEAL & NATIVE VIEW-TIMELINE ARCHITECTURE
  * ========================================================================== */
 .clean-hidden {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px) scale(0.96);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .clean-revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes modern-card-reveal {
+      0% {
+        opacity: 0;
+        transform: translateY(45px) scale(0.94);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .clean-hidden {
+      animation: modern-card-reveal auto cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 3% cover 25%;
+      transition: none;
+    }
+  }
+}
+
+/* Ambient Metallic Button Breathing Glow */
+@keyframes gold-ambient-pulse {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(212, 175, 55, 0.52);
+  }
+}
+
+.btn-primary-metallic {
+  animation: gold-ambient-pulse 4s infinite ease-in-out;
 }
 
 @media (max-width: 767px) {

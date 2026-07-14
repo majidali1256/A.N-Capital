@@ -360,9 +360,31 @@ function initServices3DScene(containerId) {
 
   const divisionGroups = [realEstateGroup, chartGroup, cargoGroup, wealthGroup];
 
+  let mouseNormX = 0;
+  let mouseNormY = 0;
+  window.addEventListener('mousemove', (e) => {
+    mouseNormX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseNormY = -(e.clientY / window.innerHeight) * 2 + 1;
+  }, { passive: true });
+
+  let currentCamX = 0;
+  let currentCamY = 1.2;
+
   function animate() {
     requestAnimationFrame(animate);
     const time = Date.now() * 0.0009;
+
+    // Smooth Interactive Camera Tilt Tracking
+    const targetCamX = mouseNormX * 1.8;
+    const targetCamY = 1.2 + mouseNormY * 0.8;
+    currentCamX += (targetCamX - currentCamX) * 0.04;
+    currentCamY += (targetCamY - currentCamY) * 0.04;
+    camera.position.x = currentCamX;
+    camera.position.y = currentCamY;
+    camera.lookAt(0, 0, 0);
+
+    // Dynamic Gold Shimmering Light
+    pointLight.intensity = 2.6 + Math.sin(time * 3.5) * 0.45;
 
     // Orbital Carousel Motion
     const orbitRadiusX = 5.4;
@@ -379,8 +401,8 @@ function initServices3DScene(containerId) {
       // Depth Factor: 0 (back) -> 1 (front)
       const depthFactor = (z + orbitRadiusZ) / (2 * orbitRadiusZ);
 
-      // Smooth zoom: front icon scales up beautifully
-      const zoom = 0.6 + Math.pow(depthFactor, 1.6) * 0.82;
+      // Smooth zoom: front icon scales up beautifully with extra prominence
+      const zoom = 0.6 + Math.pow(depthFactor, 1.6) * 0.85;
       node.scale.set(zoom, zoom, zoom);
 
       // Float vertical motion and prominence elevation
