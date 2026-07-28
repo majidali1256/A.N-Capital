@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# 1. Force HTTPS (Optional but highly recommended)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirect .html to clean URL (e.g. /about.html -> /about)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
+RewriteRule ^/?(.*)\.html$ /$1 [L,R=301]
+
+# 3. Serve the .html file silently when a clean URL is requested
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^/?(.*)$ /$1.html [L]

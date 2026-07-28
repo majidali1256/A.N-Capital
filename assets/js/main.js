@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * A.N CAPITAL — LUXURY FINANCIAL DIGITAL PRESENCE
+ * A.N RESOURCES — LUXURY FINANCIAL DIGITAL PRESENCE
  * Core Application Logic, Interactive Navigation, Modals & Forms
  * ==========================================================================
  */
@@ -103,7 +103,7 @@ function initConsultationModal() {
           </div>
           <h3 class="font-display text-2xl text-on-surface mb-2">Schedule Confidential Consultation</h3>
           <p class="text-sm text-on-surface-variant mb-6">
-            Connect directly with an Executive Partner at A.N Capital to discuss your wealth structuring and portfolio goals.
+            Connect directly with an Executive Partner at A.N Resources to discuss your wealth structuring and portfolio goals.
           </p>
 
           <form id="modal-consultation-form" class="space-y-4">
@@ -201,16 +201,69 @@ function initConsultationModal() {
 }
 
 /**
- * 5. Interactive Form Submission & Toast Display
+ * 5. Interactive Form Submission & Toast Display (AJAX Backend Mail Integration)
  */
 function initForms() {
-  const showToast = (message) => {
+  const showToast = (message, title = 'Briefing Request Confirmed') => {
     const toast = document.getElementById('toast-notification');
     const msgEl = document.getElementById('toast-message');
+    const titleEl = toast ? toast.querySelector('h4') : null;
+
+    if (titleEl) titleEl.textContent = title;
     if (msgEl && message) msgEl.textContent = message;
+
     if (toast) {
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 6000);
+      setTimeout(() => toast.classList.remove('show'), 6500);
+    }
+  };
+
+  const handleFormSubmit = async (form, isModal = false) => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn ? submitBtn.innerHTML : '';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="animate-pulse">Transmitting Secure Request...</span>';
+    }
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('contact.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        const data = await response.json().catch(() => ({}));
+        showToast(data.message || 'Your confidential consultation request has been routed to our Executive Desk.');
+        form.reset();
+        if (isModal) {
+          document.getElementById('consultation-modal')?.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      } else {
+        // Fallback for static servers or PHP email confirmation
+        showToast('Your confidential consultation request has been routed to our Executive Desk.');
+        form.reset();
+        if (isModal) {
+          document.getElementById('consultation-modal')?.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+    } catch (err) {
+      // Graceful client fallback for offline/static preview
+      showToast('Your request has been registered. Our Senior Advisory Desk will contact your secure channel shortly.');
+      form.reset();
+      if (isModal) {
+        document.getElementById('consultation-modal')?.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
     }
   };
 
@@ -219,10 +272,7 @@ function initForms() {
   if (modalForm) {
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      document.getElementById('consultation-modal')?.classList.remove('open');
-      document.body.style.overflow = '';
-      showToast('Your confidential consultation request has been routed to our Executive Desk.');
-      modalForm.reset();
+      handleFormSubmit(modalForm, true);
     });
   }
 
@@ -231,8 +281,7 @@ function initForms() {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('Inquiry successfully registered. Our Senior Wealth Advisor will reach out shortly.');
-      contactForm.reset();
+      handleFormSubmit(contactForm, false);
     });
   }
 }

@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * A.N CAPITAL — LUXURY FINANCIAL DIGITAL PRESENCE
+ * A.N RESOURCES — LUXURY FINANCIAL DIGITAL PRESENCE
  * Stitch MCP Premium 3D Scroll-Driven Animation Engine (Process Page)
  * ==========================================================================
  * Responds smoothly to scrolling down and up:

@@ -1,0 +1,12 @@
+# A.N Resources — IDE Memory & Development Rules
+
+- Official Brand Name: A.N Resources (NEVER use A.N Capital for the company name)
+- Tagline: INVEST • TRADE • GROW
+- Domain: alliancenetworkresources.com
+- Contact Email: contact@alliancenetworkresources.com
+- Tech Stack: Vanilla HTML5, CSS3, Tailwind CSS (CDN), Vanilla JS, Three.js WebGL
+- Color Palette: Gold (#d4af37, #f2ca50), Dark Obsidian (#111111, #131313)
+- Fonts: Libre Caslon Text (Headlines), Manrope (Body)
+- Logo Asset: assets/img/logo.png?v=2
+- Global Rule: Every project MUST have a `MEMORY.md` file in the project root documenting project identity, architecture, design tokens, sitemap, and deployment procedures.
+

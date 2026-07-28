@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * A.N CAPITAL — LUXURY FINANCIAL DIGITAL PRESENCE
+ * A.N RESOURCES — LUXURY FINANCIAL DIGITAL PRESENCE
  * Centralized Three.js & WebGL 3D Visualization Engine
  * ==========================================================================
  */

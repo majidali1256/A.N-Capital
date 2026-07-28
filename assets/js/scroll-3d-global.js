@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * A.N CAPITAL — LUXURY FINANCIAL DIGITAL PRESENCE
+ * A.N RESOURCES — LUXURY FINANCIAL DIGITAL PRESENCE
  * Framer Motion & UI UX Pro Max Animation Suite
  * ==========================================================================
  * Features implemented per ui-ux-pro-max guidelines:

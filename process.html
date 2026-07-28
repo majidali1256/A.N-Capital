@@ -3,8 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Allocation Framework — A.N Capital | Institutional Investment Process</title>
-  <meta name="description" content="Explore A.N Capital's proven 5-step institutional investment process with interactive 3D scroll-driven visualization." />
+  <title>The Allocation Framework — A.N Resources | Institutional Investment Process</title>
+  <!-- Google Search Site Name & Favicon -->
+  <meta property="og:site_name" content="A.N Resources" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "A.N Resources",
+    "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources"],
+    "url": "https://alliancenetworkresources.com/"
+  }
+  </script>
+  <meta name="description" content="Explore A.N Resources's proven 5-step institutional investment process with interactive 3D scroll-driven visualization." />
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +51,12 @@
   
   <!-- Custom Shared Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- PWA & Mobile Web App Meta -->
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#131313" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="preload" as="image" href="assets/img/logo.png?v=2" />
 </head>
 <body class="antialiased bg-[#111111] text-on-surface bg-architectural relative">
 
@@ -52,17 +70,17 @@
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-3 group">
-          <img src="assets/img/logo.png" alt="A.N Capital Logo" class="h-10 md:h-11 w-auto object-contain group-hover:scale-105 transition-transform" />
-          <div class="flex flex-col">
-            <span class="font-display font-bold text-lg tracking-wider text-primary">A.N CAPITAL</span>
-            <span class="text-[9px] uppercase tracking-[0.25em] text-on-surface-variant">Invest • Trade • Grow</span>
+        <a href="/" class="flex items-center gap-4 group">
+          <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
+          <div class="flex flex-col justify-center">
+            <span class="font-display font-bold text-xl md:text-2xl tracking-wider text-primary">A.N RESOURCES</span>
+            <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-on-surface-variant mt-0.5">INVEST &bull; TRADE &bull; GROW</span>
           </div>
         </a>
 
         <!-- Desktop Links -->
         <div class="hidden md:flex items-center gap-2 lg:gap-6">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="/" class="nav-link">Home</a>
           <a href="about.html" class="nav-link">About Us</a>
           <a href="services.html" class="nav-link">Services</a>
           <a href="process.html" class="nav-link active">Process</a>
@@ -89,13 +107,13 @@
     <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-80 max-w-full bg-[#181818] border-l border-primary/30 z-50 p-6 flex flex-col justify-between md:hidden shadow-2xl">
       <div>
         <div class="flex justify-between items-center pb-6 border-b border-primary/20">
-          <span class="font-display text-primary font-bold text-lg">A.N CAPITAL</span>
+          <span class="font-display text-primary font-bold text-lg">A.N RESOURCES</span>
           <button id="close-mobile-drawer" class="text-on-surface-variant hover:text-primary">
             <span class="material-symbols-outlined text-2xl">close</span>
           </button>
         </div>
         <nav class="flex flex-col gap-4 mt-8">
-          <a href="index.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Home</a>
+          <a href="/" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Home</a>
           <a href="about.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">About Us</a>
           <a href="services.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-on-surface-variant">Services</a>
           <a href="process.html" class="mobile-nav-link text-sm uppercase tracking-widest font-semibold py-2 border-b border-white/5 text-primary">Investment Process</a>
@@ -120,7 +138,7 @@
         The Allocation <span class="gold-text-gradient">Framework</span>
       </h1>
       <p class="text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-        A disciplined 5-phase methodology engineered by A.N Capital to preserve sovereign capital, structure global liquidity, and compound institutional portfolios over generations.
+        A disciplined 5-phase methodology engineered by A.N Resources to preserve sovereign capital, structure global liquidity, and compound institutional portfolios over generations.
       </p>
       <div class="w-20 h-1 bg-primary mx-auto mt-8 rounded"></div>
     </header>
@@ -278,7 +296,7 @@
         <!-- Brand Info -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img src="assets/img/logo.png" alt="A.N Capital Logo" class="h-16 w-auto object-contain" />
+            <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
           </div>
           <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
             Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
@@ -300,7 +318,7 @@
         <div>
           <h4 class="font-display text-lg text-on-surface mb-4 border-b border-primary/20 pb-2 inline-block">Navigation</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+            <li><a href="/" class="text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
             <li><a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors">About Us</a></li>
             <li><a href="services.html" class="text-on-surface-variant hover:text-primary transition-colors">Our Services</a></li>
             <li><a href="process.html" class="text-on-surface-variant hover:text-primary transition-colors">Investment Process</a></li>
@@ -331,7 +349,7 @@
 
       <!-- Copyright & Policies -->
       <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
-        <p>© 2024 A.N Capital. All Rights Reserved. Your Trust, Our Commitment.</p>
+        <p>© 2024 A.N Resources. All Rights Reserved. Your Trust, Our Commitment.</p>
         <div class="flex flex-wrap gap-6 uppercase tracking-wider">
           <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
           <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
