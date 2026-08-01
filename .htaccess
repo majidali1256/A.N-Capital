@@ -1,14 +1,18 @@
 RewriteEngine On
 
-# 1. Force HTTPS (Optional but highly recommended)
+# 1. Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. Redirect .html to clean URL (e.g. /about.html -> /about)
+# 2. Force non-WWW (Canonical domain for Google indexing)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 3. Redirect .html to clean URL (e.g. /about.html -> /about)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
 RewriteRule ^/?(.*)\.html$ /$1 [L,R=301]
 
-# 3. Serve the .html file silently when a clean URL is requested
+# 4. Serve the .html file silently when a clean URL is requested
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f

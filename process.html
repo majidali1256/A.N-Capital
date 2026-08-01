@@ -3,20 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Allocation Framework — A.N Resources | Institutional Investment Process</title>
-  <!-- Google Search Site Name & Favicon -->
+  <title>Investment Process | Strategic Asset Allocation & Portfolio Structuring | A.N Resources</title>
+  <meta name="description" content="Explore the institutional investment process at A.N Resources (Alliance Network Resources). Rigorous real estate asset acquisition, stock market risk management, and portfolio structuring." />
+  <meta name="keywords" content="A.N Resources Investment Process, Real Estate Structuring Process, Stock Market Risk Management, Portfolio Asset Allocation, Institutional Investment Process, Alliance Network Resources, AN Resources" />
+  <meta name="author" content="A.N Resources" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://alliancenetworkresources.com/process.html" />
+  
+  <!-- Open Graph / Facebook / LinkedIn SEO -->
   <meta property="og:site_name" content="A.N Resources" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://alliancenetworkresources.com/process.html" />
+  <meta property="og:title" content="Investment Process | Strategic Asset Allocation & Portfolio Structuring | A.N Resources" />
+  <meta property="og:description" content="Explore A.N Resources's (Alliance Network Resources) proven 5-step institutional investment process for Real Estate, Stock Market, and multi-asset wealth management." />
+  <meta property="og:image" content="https://alliancenetworkresources.com/assets/img/logo.png" />
+  
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Investment Process | Strategic Asset Allocation | A.N Resources" />
+  <meta name="twitter:description" content="Explore A.N Resources's (Alliance Network Resources) proven 5-step institutional investment process for Real Estate and Stock Market portfolios." />
+  <meta name="twitter:image" content="https://alliancenetworkresources.com/assets/img/logo.png" />
+  
   <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  
+  <!-- Google Search Site Name & Rich Schema (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "A.N Resources",
-    "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources"],
-    "url": "https://alliancenetworkresources.com/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://alliancenetworkresources.com/#website",
+        "url": "https://alliancenetworkresources.com/",
+        "name": "A.N Resources",
+        "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources"],
+        "publisher": {
+          "@id": "https://alliancenetworkresources.com/#organization"
+        }
+      },
+      {
+        "@type": ["Organization", "FinancialService", "RealEstateAgent"],
+        "@id": "https://alliancenetworkresources.com/#organization",
+        "name": "A.N Resources",
+        "legalName": "Alliance Network Resources",
+        "alternateName": ["AN Resources", "Alliance Network Resources"],
+        "url": "https://alliancenetworkresources.com/",
+        "logo": "https://alliancenetworkresources.com/assets/img/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town",
+          "addressLocality": "Rawalpindi",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        }
+      }
+    ]
   }
   </script>
-  <meta name="description" content="Explore A.N Resources's proven 5-step institutional investment process with interactive 3D scroll-driven visualization." />
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,9 +99,41 @@
   <meta name="theme-color" content="#131313" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="preload" as="image" href="assets/img/logo.png?v=2" />
+  <style>
+    @keyframes splashEmblemBlink {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.96);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.04);
+      }
+    }
+  </style>
 </head>
 <body class="antialiased bg-[#111111] text-on-surface bg-architectural relative">
+
+  <script>
+    (function() {
+      var isReload = false;
+      try {
+        var navEntries = performance.getEntriesByType('navigation');
+        if (navEntries.length > 0 && navEntries[0].type === 'reload') {
+          isReload = true;
+        }
+      } catch(e) {}
+      if (sessionStorage.getItem('hasVisitedSession') === 'true' && !isReload) {
+        document.write('<style>#splash-screen { display: none !important; }</style>');
+      }
+    })();
+  </script>
+  <!-- Full-Screen Preloader / Splash Screen -->
+  <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; background: #070608; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease;">
+    <div class="splash-logo-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
+      <img src="assets/img/logo.png?v=100" alt="A.N Resources Emblem" class="splash-logo-img" style="width: 270px; max-width: 75vw; height: auto; display: block; margin: 0 auto; animation: splashEmblemBlink 1.4s ease-in-out infinite;" />
+    </div>
+  </div>
 
   <!-- Fixed Fullscreen 3D Scroll Stage Canvas -->
   <div id="threejs-process-scroll-stage"></div>
@@ -71,7 +146,7 @@
         
         <!-- Logo -->
         <a href="/" class="flex items-center gap-4 group">
-          <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
+          <img src="assets/img/logo.png?v=10" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
           <div class="flex flex-col justify-center">
             <span class="font-display font-bold text-xl md:text-2xl tracking-wider text-primary">A.N RESOURCES</span>
             <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-on-surface-variant mt-0.5">INVEST &bull; TRADE &bull; GROW</span>
@@ -126,7 +201,7 @@
         </button>
         <div class="text-xs text-on-surface-variant space-y-1 font-mono">
           <p>+92 314 9364821</p>
-          <p>Bahria Phase 7, Rawalpindi</p>
+          <p>Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town, Rawalpindi</p>
         </div>
       </div>
     </div>
@@ -296,7 +371,7 @@
         <!-- Brand Info -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
+            <img src="assets/img/logo.png?v=10" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
           </div>
           <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
             Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
@@ -340,7 +415,7 @@
             </li>
             <li class="flex items-start gap-2 pt-2">
               <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
-              <span>Bahria Phase 7,<br>Rawalpindi</span>
+              <span>Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town, Rawalpindi</span>
             </li>
           </ul>
         </div>

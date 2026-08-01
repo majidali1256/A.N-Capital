@@ -106,29 +106,29 @@ function initConsultationModal() {
             Connect directly with an Executive Partner at A.N Resources to discuss your wealth structuring and portfolio goals.
           </p>
 
-          <form id="modal-consultation-form" class="space-y-4">
+          <form id="modal-consultation-form" action="contact.php" method="POST" class="space-y-4">
             <div>
               <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">Full Name</label>
-              <input type="text" required placeholder="Lord / Dr. / Mr. / Ms. Full Name"
+              <input type="text" name="first_name" required placeholder="Lord / Dr. / Mr. / Ms. Full Name"
                 class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none" />
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">Direct Phone</label>
-                <input type="tel" required placeholder="+1 (555) 000-0000"
+                <input type="tel" name="phone" required placeholder="+1 (555) 000-0000"
                   class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none" />
               </div>
               <div>
                 <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">Corporate Email</label>
-                <input type="email" required placeholder="client@enterprise.com"
+                <input type="email" name="email" required placeholder="client@enterprise.com"
                   class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none" />
               </div>
             </div>
 
             <div>
               <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">Division of Interest</label>
-              <select required class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none">
+              <select name="asset_class" required class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none">
                 <option value="Real Estate">Real Estate Investments</option>
                 <option value="Forex Trading">Forex & Multi-Asset Trading</option>
                 <option value="Physical Commodities">Physical Commodities Trading</option>
@@ -138,15 +138,22 @@ function initConsultationModal() {
 
             <div>
               <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">Estimated Portfolio Scope</label>
-              <select class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none">
-                <option>$1M - $5M USD</option>
-                <option>$5M - $25M USD</option>
-                <option>$25M - $100M+ USD</option>
-                <option>Institutional Mandate</option>
+              <select name="mandate_range" class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none">
+                <option value="$1M - $5M USD">$1M - $5M USD</option>
+                <option value="$5M - $25M USD">$5M - $25M USD</option>
+                <option value="$25M - $100M+ USD">$25M - $100M+ USD</option>
+                <option value="Institutional Mandate">Institutional Mandate</option>
               </select>
             </div>
 
-            <button type="submit" class="w-full btn-primary-metallic px-4 py-3.5 rounded text-xs sm:text-sm font-bold tracking-wider leading-snug mt-2 text-center whitespace-normal">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-on-surface-variant mb-1">Confidential Notes (Optional)</label>
+              <textarea name="message" rows="2" placeholder="Primary investment horizon, target liquidity parameters, or preferred jurisdiction."
+                class="w-full bg-surface/80 border border-primary/30 rounded px-4 py-3 text-sm text-on-surface focus:border-primary focus:outline-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-primary-metallic py-3.5 rounded text-xs font-bold uppercase tracking-wider mt-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-sm">lock</span>
               <span>Request Confidential Briefing</span>
             </button>
           </form>
@@ -229,21 +236,44 @@ function initForms() {
 
     try {
       const formData = new FormData(form);
-      const response = await fetch('contact.php', {
+      const firstName = formData.get('first_name') || '';
+      const lastName = formData.get('last_name') || '';
+      const email = formData.get('email') || '';
+      const phone = formData.get('phone') || '';
+      const assetClass = formData.get('asset_class') || 'General Investment';
+      const mandateRange = formData.get('mandate_range') || 'N/A';
+      const message = formData.get('message') || '';
+
+      // Instant Direct API Delivery to contact@alliancenetworkresources.com
+      const response = await fetch('https://formsubmit.co/ajax/contact@alliancenetworkresources.com', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          'Client Name': (firstName + ' ' + lastName).trim(),
+          'Email Address': email,
+          'Direct Telephone': phone,
+          'Primary Asset Class': assetClass,
+          'Mandate Range': mandateRange,
+          'Confidential Message': message,
+          '_subject': 'New Consultation',
+          '_captcha': 'false'
+        })
       });
 
+      // Backup PHP post
+      fetch('contact.php', { method: 'POST', body: formData }).catch(() => {});
+
       if (response.ok) {
-        const data = await response.json().catch(() => ({}));
-        showToast(data.message || 'Your confidential consultation request has been routed to our Executive Desk.');
+        showToast('Your confidential consultation request has been routed to our Executive Desk.');
         form.reset();
         if (isModal) {
           document.getElementById('consultation-modal')?.classList.remove('open');
           document.body.style.overflow = '';
         }
       } else {
-        // Fallback for static servers or PHP email confirmation
         showToast('Your confidential consultation request has been routed to our Executive Desk.');
         form.reset();
         if (isModal) {
@@ -252,7 +282,6 @@ function initForms() {
         }
       }
     } catch (err) {
-      // Graceful client fallback for offline/static preview
       showToast('Your request has been registered. Our Senior Advisory Desk will contact your secure channel shortly.');
       form.reset();
       if (isModal) {
@@ -345,3 +374,89 @@ function initMobileBottomNavBar() {
 
   document.body.appendChild(navEl);
 }
+
+/**
+ * 8. Luxury Full-Screen Preloader / Splash Screen
+ */
+function initSplashScreen() {
+  let splashEl = document.getElementById('splash-screen');
+
+  // Check if this is a page refresh or first time opening site
+  let isReload = false;
+  try {
+    const navEntries = performance.getEntriesByType('navigation');
+    if (navEntries.length > 0 && navEntries[0].type === 'reload') {
+      isReload = true;
+    }
+  } catch(e) {}
+
+  const hasVisited = sessionStorage.getItem('hasVisitedSession') === 'true';
+
+  // If internal page navigation (visited in session AND not a reload) -> hide splash immediately
+  if (hasVisited && !isReload) {
+    if (splashEl) {
+      splashEl.style.display = 'none';
+      if (splashEl.parentNode) {
+        splashEl.parentNode.removeChild(splashEl);
+      }
+    }
+    return;
+  }
+
+  // Mark session as visited
+  sessionStorage.setItem('hasVisitedSession', 'true');
+
+  if (!splashEl) {
+    splashEl = document.createElement('div');
+    splashEl.id = 'splash-screen';
+    splashEl.innerHTML = `
+      <div class="splash-logo-container">
+        <img src="assets/img/logo.png?v=100" alt="A.N Resources Emblem" class="splash-logo-img" />
+      </div>
+    `;
+    if (document.body) {
+      document.body.prepend(splashEl);
+    } else {
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!document.getElementById('splash-screen')) {
+          document.body.prepend(splashEl);
+        }
+      });
+    }
+  }
+
+  const dismissSplash = () => {
+    const splash = document.getElementById('splash-screen');
+    if (!splash || splash.classList.contains('fade-out')) return;
+
+    splash.classList.add('fade-out');
+    setTimeout(() => {
+      if (splash && splash.parentNode) {
+        splash.parentNode.removeChild(splash);
+      }
+    }, 800);
+  };
+
+  const minDisplayTime = 1600; // 1.6s display
+  const startTime = Date.now();
+
+  const handleComplete = () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minDisplayTime - elapsed);
+    setTimeout(dismissSplash, remaining);
+  };
+
+  if (document.readyState === 'complete') {
+    handleComplete();
+  } else {
+    window.addEventListener('load', handleComplete);
+    // Fallback safeguard to guarantee splash dismisses after 3s max
+    setTimeout(dismissSplash, 3000);
+  }
+}
+
+// Trigger splash preloader immediately on script execution
+initSplashScreen();
+
+
+

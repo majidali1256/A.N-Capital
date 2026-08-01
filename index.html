@@ -3,20 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A.N Resources — Private Wealth & Institutional Asset Management</title>
-  <!-- Google Search Site Name & Favicon -->
+  <title>A.N Resources | Wealth Management, Real Estate & Stock Investments | Alliance Network Resources</title>
+  <meta name="description" content="A.N Resources (Alliance Network Resources) is a premier wealth management & investment advisory firm specializing in Real Estate portfolio structuring, Stock Market trading, and institutional asset management in Bahria Town, Rawalpindi." />
+  <meta name="keywords" content="A.N Resources, Alliance Network Resources, AN Resources, Real Estate Investment, Stock Market Investment, Wealth Management, Private Wealth Advisory, Real Estate Portfolio Structuring, Bahria Town Rawalpindi Property, Stock Trading, Capital Growth, Asset Management Rawalpindi, Forex Trading, Commodities Investment" />
+  <meta name="author" content="A.N Resources" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://alliancenetworkresources.com/" />
+  
+  <!-- Open Graph / Facebook / LinkedIn SEO -->
   <meta property="og:site_name" content="A.N Resources" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alliancenetworkresources.com/" />
+  <meta property="og:title" content="A.N Resources | Wealth Management, Real Estate & Stock Investments | Alliance Network Resources" />
+  <meta property="og:description" content="A.N Resources (Alliance Network Resources) offers premier solutions in Real Estate Investment, Stock Market Trading, and Private Wealth Management in Bahria Town, Rawalpindi." />
+  <meta property="og:image" content="https://alliancenetworkresources.com/assets/img/logo.png" />
+  
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A.N Resources | Wealth Management, Real Estate & Stock Investments" />
+  <meta name="twitter:description" content="A.N Resources (Alliance Network Resources) offers premier solutions in Real Estate Investment, Stock Market Trading, and Private Wealth Management." />
+  <meta name="twitter:image" content="https://alliancenetworkresources.com/assets/img/logo.png" />
+  
   <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  
+  <!-- Google Search Site Name & Rich Schema (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "A.N Resources",
-    "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources"],
-    "url": "https://alliancenetworkresources.com/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://alliancenetworkresources.com/#website",
+        "url": "https://alliancenetworkresources.com/",
+        "name": "A.N Resources",
+        "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources", "AN Resources Rawalpindi"],
+        "publisher": {
+          "@id": "https://alliancenetworkresources.com/#organization"
+        }
+      },
+      {
+        "@type": ["Organization", "FinancialService", "RealEstateAgent"],
+        "@id": "https://alliancenetworkresources.com/#organization",
+        "name": "A.N Resources",
+        "legalName": "Alliance Network Resources",
+        "alternateName": ["AN Resources", "Alliance Network Resources"],
+        "url": "https://alliancenetworkresources.com/",
+        "logo": "https://alliancenetworkresources.com/assets/img/logo.png",
+        "image": "https://alliancenetworkresources.com/assets/img/logo.png",
+        "description": "A.N Resources (Alliance Network Resources) is a premier wealth management and investment firm specializing in Real Estate portfolio structuring, Stock Market trading, and institutional asset advisory in Bahria Town, Rawalpindi.",
+        "telephone": "+923149364821",
+        "email": "contact@alliancenetworkresources.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town",
+          "addressLocality": "Rawalpindi",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        },
+        "knowsAbout": [
+          "Real Estate Investment",
+          "Stock Market Portfolio Management",
+          "Private Wealth Advisory",
+          "Forex & Commodities Trading",
+          "Capital Appreciation",
+          "Institutional Asset Management"
+        ]
+      }
+    ]
   }
   </script>
-  <meta name="description" content="A.N Resources provides exclusive financial solutions for high-net-worth individuals and institutional investors. Invest | Trade | Grow." />
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,9 +111,41 @@
   <meta name="theme-color" content="#131313" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="preload" as="image" href="assets/img/logo.png?v=2" />
+  <style>
+    @keyframes splashEmblemBlink {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.96);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.04);
+      }
+    }
+  </style>
 </head>
 <body class="antialiased bg-[#111111] text-on-surface">
+
+  <script>
+    (function() {
+      var isReload = false;
+      try {
+        var navEntries = performance.getEntriesByType('navigation');
+        if (navEntries.length > 0 && navEntries[0].type === 'reload') {
+          isReload = true;
+        }
+      } catch(e) {}
+      if (sessionStorage.getItem('hasVisitedSession') === 'true' && !isReload) {
+        document.write('<style>#splash-screen { display: none !important; }</style>');
+      }
+    })();
+  </script>
+  <!-- Full-Screen Preloader / Splash Screen -->
+  <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; background: #070608; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease;">
+    <div class="splash-logo-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
+      <img src="assets/img/logo.png?v=100" alt="A.N Resources Emblem" class="splash-logo-img" style="width: 270px; max-width: 75vw; height: auto; display: block; margin: 0 auto; animation: splashEmblemBlink 1.4s ease-in-out infinite;" />
+    </div>
+  </div>
 
   <!-- WebGL Background Canvas -->
   <canvas id="webgl-bg" class="fixed inset-0 -z-10 w-full h-full pointer-events-none"></canvas>
@@ -72,7 +159,7 @@
         
         <!-- Logo -->
         <a href="/" class="flex items-center gap-4 group">
-          <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
+          <img src="assets/img/logo.png?v=10" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
           <div class="flex flex-col justify-center">
             <span class="font-display font-bold text-xl md:text-2xl tracking-wider text-primary">A.N RESOURCES</span>
             <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-on-surface-variant mt-0.5">INVEST &bull; TRADE &bull; GROW</span>
@@ -127,7 +214,7 @@
         </button>
         <div class="text-xs text-on-surface-variant space-y-1 font-mono">
           <p>+92 314 9364821</p>
-          <p>Bahria Phase 7, Rawalpindi</p>
+          <p>Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town, Rawalpindi</p>
         </div>
       </div>
     </div>
@@ -164,7 +251,7 @@
           <div class="mt-12 pt-8 border-t border-primary/20 flex items-center gap-5">
             <div class="flex -space-x-3">
               <div class="w-11 h-11 rounded-full border-2 border-[#111111] bg-[#1a1a1a] flex items-center justify-center p-1 overflow-hidden shadow-md">
-                <img class="w-full h-full object-contain" src="assets/img/logo.png?v=2" alt="Institutional Precision" />
+                <img class="w-full h-full object-contain" src="assets/img/logo.png?v=10" alt="Institutional Precision" />
               </div>
               <div class="w-11 h-11 rounded-full border-2 border-[#111111] bg-gradient-to-br from-[#d4af37] to-[#8c7320] flex items-center justify-center text-[#111111] font-bold text-[11px] shadow-md tracking-tighter">HQ</div>
               <div class="w-11 h-11 rounded-full border-2 border-[#111111] bg-surface-high flex items-center justify-center text-primary font-bold text-xs">+5k</div>
@@ -366,7 +453,7 @@
         <!-- Brand Info -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
+            <img src="assets/img/logo.png?v=10" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
           </div>
           <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
             Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
@@ -410,7 +497,7 @@
             </li>
             <li class="flex items-start gap-2 pt-2">
               <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
-              <span>Bahria Phase 7,<br>Rawalpindi</span>
+              <span>Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town, Rawalpindi</span>
             </li>
           </ul>
         </div>

@@ -3,20 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us — A.N Resources | Your Trust, Our Commitment</title>
-  <!-- Google Search Site Name & Favicon -->
+  <title>About A.N Resources | Alliance Network Resources Wealth & Investment Advisory</title>
+  <meta name="description" content="Learn about A.N Resources (Alliance Network Resources). We combine decades of expertise in real estate portfolio structuring, stock market investments, forex trading, and high-net-worth wealth management in Bahria Town, Rawalpindi." />
+  <meta name="keywords" content="About A.N Resources, About Alliance Network Resources, AN Resources Rawalpindi, Real Estate Investment Company, Stock Market Advisors, Institutional Wealth Management, Bahria Town Investment Advisory, Capital Preservation" />
+  <meta name="author" content="A.N Resources" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://alliancenetworkresources.com/about.html" />
+  
+  <!-- Open Graph / Facebook / LinkedIn SEO -->
   <meta property="og:site_name" content="A.N Resources" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://alliancenetworkresources.com/about.html" />
+  <meta property="og:title" content="About A.N Resources | Alliance Network Resources Wealth & Investment Advisory" />
+  <meta property="og:description" content="Discover A.N Resources (Alliance Network Resources): Structuring real estate portfolios, stock market opportunities, and multi-asset wealth growth in Rawalpindi." />
+  <meta property="og:image" content="https://alliancenetworkresources.com/assets/img/logo.png" />
+  
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About A.N Resources | Alliance Network Resources" />
+  <meta name="twitter:description" content="Discover A.N Resources (Alliance Network Resources): Structuring real estate portfolios, stock market opportunities, and multi-asset wealth growth." />
+  <meta name="twitter:image" content="https://alliancenetworkresources.com/assets/img/logo.png" />
+  
   <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  
+  <!-- Google Search Site Name & Rich Schema (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "A.N Resources",
-    "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources"],
-    "url": "https://alliancenetworkresources.com/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://alliancenetworkresources.com/#website",
+        "url": "https://alliancenetworkresources.com/",
+        "name": "A.N Resources",
+        "alternateName": ["A.N RESOURCES", "Alliance Network Resources", "AN Resources"],
+        "publisher": {
+          "@id": "https://alliancenetworkresources.com/#organization"
+        }
+      },
+      {
+        "@type": ["Organization", "FinancialService", "RealEstateAgent"],
+        "@id": "https://alliancenetworkresources.com/#organization",
+        "name": "A.N Resources",
+        "legalName": "Alliance Network Resources",
+        "alternateName": ["AN Resources", "Alliance Network Resources"],
+        "url": "https://alliancenetworkresources.com/",
+        "logo": "https://alliancenetworkresources.com/assets/img/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town",
+          "addressLocality": "Rawalpindi",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        }
+      }
+    ]
   }
   </script>
-  <meta name="description" content="Learn about A.N Resources's history, visionary leadership, and commitment to institutional wealth management." />
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,9 +99,41 @@
   <meta name="theme-color" content="#131313" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="preload" as="image" href="assets/img/logo.png?v=2" />
+  <style>
+    @keyframes splashEmblemBlink {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.96);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.04);
+      }
+    }
+  </style>
 </head>
 <body class="antialiased bg-[#111111] text-on-surface bg-architectural">
+
+  <script>
+    (function() {
+      var isReload = false;
+      try {
+        var navEntries = performance.getEntriesByType('navigation');
+        if (navEntries.length > 0 && navEntries[0].type === 'reload') {
+          isReload = true;
+        }
+      } catch(e) {}
+      if (sessionStorage.getItem('hasVisitedSession') === 'true' && !isReload) {
+        document.write('<style>#splash-screen { display: none !important; }</style>');
+      }
+    })();
+  </script>
+  <!-- Full-Screen Preloader / Splash Screen -->
+  <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; background: #070608; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease;">
+    <div class="splash-logo-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
+      <img src="assets/img/logo.png?v=100" alt="A.N Resources Emblem" class="splash-logo-img" style="width: 270px; max-width: 75vw; height: auto; display: block; margin: 0 auto; animation: splashEmblemBlink 1.4s ease-in-out infinite;" />
+    </div>
+  </div>
 
   <div class="relative z-10 flex flex-col min-h-screen">
 
@@ -68,7 +143,7 @@
         
         <!-- Logo -->
         <a href="/" class="flex items-center gap-4 group">
-          <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
+          <img src="assets/img/logo.png?v=10" alt="A.N Resources Logo" class="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" />
           <div class="flex flex-col justify-center">
             <span class="font-display font-bold text-xl md:text-2xl tracking-wider text-primary">A.N RESOURCES</span>
             <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-on-surface-variant mt-0.5">INVEST &bull; TRADE &bull; GROW</span>
@@ -123,7 +198,7 @@
         </button>
         <div class="text-xs text-on-surface-variant space-y-1 font-mono">
           <p>+92 314 9364821</p>
-          <p>Bahria Phase 7, Rawalpindi</p>
+          <p>Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town, Rawalpindi</p>
         </div>
       </div>
     </div>
@@ -149,25 +224,27 @@
     </section>
 
     <!-- Main Intro Split Section -->
-    <section class="py-24 max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+    <section class="py-12 sm:py-20 lg:py-24 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 items-center">
         
-        <!-- Boardroom Visual & Trust Badge -->
-        <div class="lg:col-span-6 relative rounded-2xl overflow-hidden shadow-2xl h-[480px] border border-primary/30 bg-gradient-to-br from-[#1c1c1c] via-[#111111] to-[#0d0d0d] flex flex-col items-center justify-center p-8">
-          <img class="w-2/3 max-h-[260px] object-contain opacity-90 drop-shadow-[0_10px_35px_rgba(212,175,55,0.25)]" src="assets/img/logo.png?v=2" alt="A.N Resources Emblem" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none"></div>
-          <div class="absolute bottom-8 left-8 right-8 z-10">
+        <!-- Boardroom Visual & Trust Badge Card -->
+        <div class="lg:col-span-6 relative rounded-2xl overflow-hidden shadow-2xl min-h-[360px] sm:min-h-[440px] md:h-[480px] border border-primary/30 bg-gradient-to-br from-[#1c1c1c] via-[#111111] to-[#0d0d0d] flex flex-col justify-between p-6 sm:p-8">
+          <div class="flex-1 flex items-center justify-center pt-2 pb-4">
+            <img class="w-44 sm:w-60 md:w-64 max-h-[220px] object-contain opacity-90 drop-shadow-[0_10px_35px_rgba(212,175,55,0.25)] transition-transform duration-500 hover:scale-105" src="assets/img/logo.png?v=10" alt="A.N Resources Emblem" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+          <div class="relative z-10 mt-auto pt-4 border-t border-primary/10">
             <p class="text-primary text-xs uppercase tracking-[0.25em] font-bold mb-2">Established Excellence</p>
-            <p class="text-lg text-on-surface font-display">Decades of combined leadership in institutional wealth management and multi-asset trading.</p>
+            <p class="text-base sm:text-lg text-on-surface font-display leading-snug">Decades of combined leadership in institutional wealth management and multi-asset trading.</p>
           </div>
         </div>
 
         <!-- Right Content & Live Stats -->
         <div class="lg:col-span-6">
-          <h2 class="font-display text-3xl md:text-4xl text-on-surface mb-8 border-l-4 border-primary pl-6 py-2">
+          <h2 class="font-display text-2xl sm:text-3xl md:text-4xl text-on-surface mb-6 sm:mb-8 border-l-4 border-primary pl-4 sm:pl-6 py-1 sm:py-2 leading-tight">
             Redefining Wealth<br>Management
           </h2>
-          <div class="space-y-6 text-base text-on-surface-variant leading-relaxed">
+          <div class="space-y-5 text-sm sm:text-base text-on-surface-variant leading-relaxed">
             <p>
               A.N Resources was founded on a singular premise: that true wealth generation requires more than just capital—it demands profound trust, absolute transparency, and a relentless commitment to our clients' financial futures.
             </p>
@@ -179,14 +256,14 @@
             </p>
           </div>
 
-          <div class="mt-10 grid grid-cols-2 gap-8 border-t border-primary/20 pt-8">
+          <div class="mt-8 sm:mt-10 grid grid-cols-2 gap-6 sm:gap-8 border-t border-primary/20 pt-6 sm:pt-8">
             <div>
-              <p class="font-display text-4xl text-primary font-bold mb-1">10+</p>
-              <p class="text-xs uppercase tracking-widest text-on-surface-variant">Years of Excellence</p>
+              <p class="font-display text-3xl sm:text-4xl text-primary font-bold mb-1">10+</p>
+              <p class="text-[11px] sm:text-xs uppercase tracking-widest text-on-surface-variant">Years of Excellence</p>
             </div>
             <div>
-              <p class="font-display text-4xl text-primary font-bold mb-1">$5B+</p>
-              <p class="text-xs uppercase tracking-widest text-on-surface-variant">Assets Managed</p>
+              <p class="font-display text-3xl sm:text-4xl text-primary font-bold mb-1">$5B+</p>
+              <p class="text-[11px] sm:text-xs uppercase tracking-widest text-on-surface-variant">Assets Managed</p>
             </div>
           </div>
         </div>
@@ -316,7 +393,7 @@
         <!-- Brand Info -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img src="assets/img/logo.png?v=2" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
+            <img src="assets/img/logo.png?v=10" alt="A.N Resources Logo" class="h-16 w-auto object-contain" />
           </div>
           <p class="text-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
             Invest | Trade | Grow. Elevating financial portfolios through expert strategies and unwavering dedication. Your Trust, Our Commitment.
@@ -360,7 +437,7 @@
             </li>
             <li class="flex items-start gap-2 pt-2">
               <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
-              <span>Bahria Phase 7,<br>Rawalpindi</span>
+              <span>Plaza # 49, 1st Floor, Service Road Spring North Commercial, Phase 7, Bahria Town, Rawalpindi</span>
             </li>
           </ul>
         </div>

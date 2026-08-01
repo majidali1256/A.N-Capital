@@ -425,3 +425,91 @@ details > summary::-webkit-details-marker {
     padding-bottom: 76px;
   }
 }
+
+/* ==========================================================================
+   Luxury Full-Screen Splash / Preloader Screen
+   ========================================================================== */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: #070608;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#splash-screen.fade-out {
+  opacity: 0 !important;
+  transform: scale(1.04) !important;
+  pointer-events: none !important;
+}
+
+.splash-logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.splash-logo-img {
+  width: 270px;
+  max-width: 75vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: none;
+  animation: splashEmblemBlink 1.6s ease-in-out infinite;
+}
+
+@keyframes splashEmblemBlink {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.splash-progress-bar {
+  width: 180px;
+  max-width: 60vw;
+  height: 2px;
+  background: rgba(212, 175, 55, 0.15);
+  border-radius: 2px;
+  margin-top: 2.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.splash-progress-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #d4af37, #ffe088, transparent);
+  animation: splashProgressAnim 1.4s ease-in-out infinite;
+}
+
+@keyframes splashProgressAnim {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
