@@ -341,11 +341,11 @@ function initMobileBottomNavBar() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
   const navItems = [
-    { name: 'Home', href: 'index.html', icon: 'home' },
-    { name: 'Services', href: 'services.html', icon: 'architecture' },
-    { name: 'Process', href: 'process.html', icon: 'timeline' },
-    { name: 'About', href: 'about.html', icon: 'corporate_fare' },
-    { name: 'Contact', href: 'contact.html', icon: 'mail' }
+    { name: 'Home', href: '/', icon: 'home' },
+    { name: 'Services', href: '/', icon: 'architecture' },
+    { name: 'Process', href: '/', icon: 'timeline' },
+    { name: 'About', href: '/', icon: 'corporate_fare' },
+    { name: 'Contact', href: '/', icon: 'mail' }
   ];
 
   const navEl = document.createElement('nav');
@@ -353,7 +353,7 @@ function initMobileBottomNavBar() {
   navEl.className = 'fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#131313]/95 backdrop-blur-2xl border-t border-primary/30 shadow-[0_-12px_40px_rgba(0,0,0,0.95)] px-2 py-1.5 flex justify-around items-center';
 
   navItems.forEach(item => {
-    const isActive = (item.href === currentPath) || (currentPath === '' && item.href === 'index.html');
+    const isActive = (item.href === currentPath) || (currentPath === '' && item.href === '/');
 
     const link = document.createElement('a');
     link.href = item.href;

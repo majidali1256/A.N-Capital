@@ -25,5 +25,5 @@
 
 ## Deployment Command
 ```bash
-rm -f A.N-Resources-Website.zip && zip -r A.N-Resources-Website.zip index.html about.html services.html process.html contact.html contact.php site.webmanifest sitemap.xml robots.txt google12b0c94c08abffb6.html assets .htaccess
+rm -f A.N-Resources-Website.zip && zip -r A.N-Resources-Website.zip index.html about.html services.html process.html contact.html privacy.html terms.html disclaimer.html cookies.html contact.php site.webmanifest sitemap.xml robots.txt google12b0c94c08abffb6.html assets .htaccess
 ```

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /stitch_a.n_capital_digital_presence/
+Disallow: /*.zip$
 
 # Sitemap Index
 Sitemap: https://alliancenetworkresources.com/sitemap.xml

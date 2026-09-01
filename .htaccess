@@ -1,5 +1,10 @@
 RewriteEngine On
 
+# Keep source material and downloadable project archives out of the public site.
+Options -Indexes
+RewriteRule ^stitch_a\.n_capital_digital_presence/ - [F,L]
+RewriteRule ^A\.N-Resources-Website\.zip$ - [F,L,NC]
+
 # 1. Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -8,7 +13,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# 3. Redirect .html to clean URL (e.g. /about.html -> /about)
+# 3. Redirect the homepage file and .html URLs to their clean canonical URLs.
+RewriteRule ^index\.html$ / [L,R=301]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
 RewriteRule ^/?(.*)\.html$ /$1 [L,R=301]
 
